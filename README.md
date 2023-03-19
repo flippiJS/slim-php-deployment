@@ -1,4 +1,4 @@
-Aplicación Slim Framework 4 PHP con despliegue automático en Heroku.
+Aplicación Slim Framework 4 PHP con despliegue automático.
 ==============================
 
 ## Introducción
