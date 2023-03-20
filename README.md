@@ -17,41 +17,35 @@ git commit -m "first commit"
 git push -u origin main
 ```
 
-## 3- Creamos y configuramos la aplicación en el servidor remoto
+## 3⃣ Creamos y configuramos la aplicación en el servidor remoto
 
-Para poder desplegar nuestro código en un servidor remoto, necesitamos una plataforma que nos permita gestionar uno. Para ello, nos dirigimos a la página de Railway https://railway.app/, iniciamos sesión si tenemos cuenta o creamos una.
+Para poder desplegar nuestro código en un servidor remoto, necesitamos una plataforma que nos permita gestionar uno. Para ello, nos dirigimos a la página de Railway https://railway.app/, iniciamos sesión con nuestra cuenta de Github.
 
-Heroku al iniciar sesión nos muestra su dashboard, aquí haremos clic en **New** y luego en **Create new app**:
+![Railway2](https://i.ibb.co/XSj7ppS/railway-2.png)
 
-![Heroku1](https://i.ibb.co/MVTSH69/heroku1.png)
+Railway al iniciar sesión nos muestra su dashboard, aquí haremos clic en **Deploy from Github repo**
 
-En esta sección agregamos el nombre de la app, seleccionamos la región United States y luego clic en botón **Create app**
+![Railway1](https://i.ibb.co/q9570sL/railway-1.png)
 
-![Heroku2](https://i.ibb.co/TwPJnrW/heroku2.png)
+En esta sección buscamos por el nombre de nuestro repo forkeado. Ej.: **slim-php**
 
-Ahora vamos a la sección **Deploy** y hacemos clic en la opción de GitHub, la cual nos mostrará nuestro usuario o tendremos que iniciar sesión con GitHub. Después   buscamos el nombre de nuestro repo y aparecerá abajo:
+![Railway3](https://i.ibb.co/Yf2Fnx6/railway-3.png)
 
-![Heroku3](https://i.ibb.co/vZjZgD6/heroku3.png)
+Una vez hecho esto, va a comenzar a clonar y desplegar nuestro repositorio en el servidor remoto. Este paso puede demorar unos minutos.
 
-Seleccionamos el repo y hacemos clic en **Connect**
+![Railway4](https://i.ibb.co/XxsR518/railway-4.png)
 
-Una vez hecho esto, elegimos la rama de github que queremos deplegar con nuestra aplicación Heroku, en nuestro caso `main`, y hacemos clic en **Enable Automatic Deploys**. De esta forma, cada vez que se haga una modificación a esta rama, Heroku va actualizar automáticamente la aplicación.
+Una vez que termine vamos a poder ir a la sección **Settings** y elegir la rama de github que queremos deplegar con nuestra aplicación, en nuestro caso `main`. De esta forma, cada vez que se haga una modificación a esta rama, Railway va actualizar automáticamente la aplicación.
 
-![Heroku4](https://i.ibb.co/d0z1NWv/heroku4.png)
+![Railway5](https://i.ibb.co/CVk5fLR/railway-5.png)
 
-Lo utlimo que deberiamos hacer es clic en el botón **Deploy Branch**. Esto solo se hace una sola vez, luego se hará de forma automática.
+En esa misma sección podemos verificar si el depliegue se hizo con exito y la url para acceder en **Domains**. 
 
-![Heroku5](https://i.ibb.co/sVYwVZx/heroku5.png)
+https://slim-php-deployment-production.up.railway.app/
 
-Podemos verificar desde GitHub si el depliegue se hizo con exito. 
+Accedemos a la URL de la app desplegada y si todo funcionó correctamente veremos el siguiente mensaje:
 
-https://github.com/flippiJS/slim-php-heroku/deployments
-
-![Heroku6](https://i.ibb.co/K95j3fp/heroku6.png)
-
-Desde el botón **View deployment** accedemos a la URL de la app desplegada.
-
-https://slim-php-heroku.herokuapp.com/
+``` GET => Bienvenido!!! a SlimFramework ```
 
 ## Requisitos para correr localmente
 
@@ -92,7 +86,7 @@ $app->setBasePath('/app');
 ```sh
 cd C:\<ruta-del-repo-clonado>
 composer update
-php -S localhost:666 -t app
+php -S localhost:666
 ```
 
 - Abrir desde http://localhost:666/
@@ -100,5 +94,4 @@ php -S localhost:666 -t app
 ## Ayuda
 Cualquier duda o consulta por el canal de slack
 
-### 2021 - UTN FRA
-# slim-php-deployment
+### 2023 - UTN FRA
