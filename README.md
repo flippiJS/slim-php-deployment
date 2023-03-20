@@ -58,7 +58,7 @@ php -r "if (hash_file('SHA384', 'composer-setup.php') === 'e115a8dc7871f15d85314
 php composer-setup.php
 ```
 
-## Correr localmente via XAMPP
+## 📂 Correr localmente via XAMPP
 
 - Copiar proyecto dentro de la carpeta htdocs
 
@@ -71,7 +71,7 @@ C:\xampp\htdocs\
 cd C:\xampp\htdocs\<ruta-del-repo-clonado>
 composer update
 ```
-- En el archivo index.php agregar la siguiente linea debajo de `AppFactory::create();`
+- En el archivo index.php agregar la siguiente linea debajo de `AppFactory::create();`, deberán colocar los subniveles que existan hasta llegar al archivo index.php. Si colocamos el proyecto dentro de subcarpetas por ejemplo, dentro de la carpeta `app` :
 
 ```sh
 // Set base path
@@ -79,7 +79,7 @@ $app->setBasePath('/app');
 ```
 - Abrir desde http://localhost/app ó http://localhost:8080/app (depende del puerto configurado en el panel del XAMPP)
 
-## Correr localmente via PHP
+## 📁 Correr localmente via PHP
 
 - Acceder por linea de comandos a la carpeta del proyecto y luego instalar Slim framework via Compose
 
