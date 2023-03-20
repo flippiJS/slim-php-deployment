@@ -1,14 +1,14 @@
-Aplicación Slim Framework 4 PHP con despliegue automático.
+🚀 Aplicación Slim Framework 4 PHP con despliegue automático.
 ==============================
 
-## Introducción
-El principal objetivo de este repo es poder desplegar de forma automática nuestra aplicación PHP Slim Framework 4 en Heroku.
+## 📝 Introducción
+El principal objetivo de este repositorio es poder desplegar de forma automática nuestra aplicación PHP Slim Framework 4 en un servidor en la nube. En esta ocación vamos a utilizar la versión gratuita de Railway, que nos permite vincular nuestro repositorio de github con la plataforma, poder desplegar automáticamente nuesto código y quedar disponible en la web.
 
-## 1- Forkear proyecto
-Como primer paso, forkeamos este proyecto desde el boton ubicado en la parte superior derecha de la pagina del repositorio.
+## 1⃣ Forkear proyecto
+Como primer paso, debemos hacer un fork de este proyecto desde el boton ubicado en la parte superior derecha de la pagina del repositorio.
 
-## 2- Subimos nuestro código (opcional si agregan código)
-Una vez forkeado, clonamos el repo con `git clone <url del repo>` y agregamos nuestro codigo PHP (SLIM Framework) dentro de la carpeta `/app/`.
+## 2⃣ Subimos nuestro código (opcional si agregan código)
+Una vez forkeado, clonamos el repo con `git clone <url del repo>` y agregamos nuestro codigo PHP (SLIM Framework).
 Luego comiteamos y pusheamos los cambios.
 
 ```sh
@@ -17,9 +17,9 @@ git commit -m "first commit"
 git push -u origin main
 ```
 
-## 3- Crear y configurar la App en Heroku
+## 3- Creamos y configuramos la aplicación en el servidor remoto
 
-Nos dirigimos a la página de Heroku https://heroku.com/, iniciamos sesión si tenemos cuenta o creamos una.
+Para poder desplegar nuestro código en un servidor remoto, necesitamos una plataforma que nos permita gestionar uno. Para ello, nos dirigimos a la página de Railway https://railway.app/, iniciamos sesión si tenemos cuenta o creamos una.
 
 Heroku al iniciar sesión nos muestra su dashboard, aquí haremos clic en **New** y luego en **Create new app**:
 
