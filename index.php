@@ -21,8 +21,9 @@ $app->addBodyParsingMiddleware();
 
 // Routes
 $app->get('[/]', function (Request $request, Response $response) {    
-    $data = array('method' => 'GET', 'msg' => "Bienvenido a SlimFramework 2023");
-    $response->withJson($data, 200);
+    $payload = json_encode(array('method' => 'GET', 'msg' => "Bienvenido a SlimFramework 2023"));
+    $response->getBody()->write($payload);
+    $response->withHeader('Content-Type', 'application/json');
 });
 
 $app->run();
