@@ -1,6 +1,6 @@
-<IfModule mod_rewrite.c>
-RewriteEngine On
+Options +FollowSymLinks -MultiViews
+RewriteEngine on
 RewriteBase /
-RewriteCond %{REQUEST_URI} !/public
-RewriteRule ^(.*)$ public/$1
-</IfModule>
+RewriteCond %{HTTP_HOST} ^(www\.)?example\.com$ [NC]
+RewriteCond %{REQUEST_URI} !^/images/large/
+RewriteRule ^images/(.*)/(.*)\.(jpe?g|png)$ images/large/$1/$2_LRG.$3 [E=VAR1:$1,E=VAR2:$2,E=VAR3:$3,L,NC]
