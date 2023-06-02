@@ -45,7 +45,7 @@ https://slim-php-deployment-production.up.railway.app/
 
 Accedemos a la URL de la app desplegada y si todo funcionó correctamente veremos el siguiente mensaje:
 
-``` GET => Bienvenido!!! a SlimFramework ```
+``` {"method":"GET","msg":"Bienvenido a SlimFramework 2023"} ```
 
 ## Requisitos para correr localmente
 
