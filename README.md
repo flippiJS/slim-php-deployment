@@ -77,7 +77,7 @@ composer update
 // Set base path
 $app->setBasePath('/app');
 ```
-- Abrir desde http://localhost/app ó http://localhost:8080/app (depende del puerto configurado en el panel del XAMPP)
+- Abrir desde http://localhost/ ó http://localhost:8080/ (depende del puerto configurado en el panel del XAMPP)
 
 ## 📁 Correr localmente via PHP
 
@@ -86,7 +86,7 @@ $app->setBasePath('/app');
 ```sh
 cd C:\<ruta-del-repo-clonado>
 composer update
-php -S localhost:666
+php -S localhost:666 -t app
 ```
 
 - Abrir desde http://localhost:666/
