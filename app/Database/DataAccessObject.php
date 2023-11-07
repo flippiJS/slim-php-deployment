@@ -1,6 +1,6 @@
 <?php
 
-namespace Datos;
+namespace Database;
 class DataAccessObject
 {
     private static $objAccesoDatos;
