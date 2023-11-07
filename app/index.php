@@ -10,6 +10,12 @@ use Slim\Routing\RouteCollectorProxy;
 
 require __DIR__ . '/../vendor/autoload.php';
 
+date_default_timezone_set('America/Argentina/Buenos_Aires');
+
+// Load ENV
+//$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+//$dotenv->safeLoad();
+
 // Instantiate App
 $app = AppFactory::create();
 
