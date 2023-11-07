@@ -1,6 +1,9 @@
 <?php
 
 namespace Database;
+use PDO;
+use PDOException;
+
 class DataAccessObject
 {
     private static $objAccesoDatos;
@@ -20,7 +23,7 @@ class DataAccessObject
     public static function getInstance()
     {
         if (!isset(self::$objAccesoDatos)) {
-            self::$objAccesoDatos = new AccesoDatos();
+            self::$objAccesoDatos = new DataAccessObject();
         }
         return self::$objAccesoDatos;
     }
