@@ -3,6 +3,7 @@
 namespace Models;
 
 use Database\DataAccessObject;
+use DateTime;
 use Enums\UserType;
 use Interfaces\IPersistance;
 use PDO;
