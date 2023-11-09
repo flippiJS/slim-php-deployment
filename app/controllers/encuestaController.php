@@ -40,7 +40,16 @@ class EncuestaController
 
     }
 
+    public function TraerUno($request, $response, $args)
+    {
+        $id = $args['id'];
+        $encuesta = EncuestaSQL::TraerUno($id);
+        $payload = json_encode($encuesta);
 
+        $response->getBody()->write($payload);
+        return $response
+          ->withHeader('Content-Type', 'application/json');
+    }
 
 
 }

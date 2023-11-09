@@ -39,7 +39,16 @@ class ProductoController
 
     }
 
+    public function TraerUno($request, $response, $args)
+    {
+        $id = $args['id'];
+        $usuario = ProductoSQL::TraerUno($id);
+        $payload = json_encode($usuario);
 
+        $response->getBody()->write($payload);
+        return $response
+          ->withHeader('Content-Type', 'application/json');
+    }
 
 
 }

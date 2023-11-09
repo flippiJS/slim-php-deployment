@@ -39,7 +39,16 @@ class EmpleadoController
 
     }
 
+    public function TraerUno($request, $response, $args)
+    {
+        $id = $args['id'];
+        $empleado = EmpleadoSQL::TraerUno($id);
+        $payload = json_encode($empleado);
 
+        $response->getBody()->write($payload);
+        return $response
+          ->withHeader('Content-Type', 'application/json');
+    }
 
 
 }

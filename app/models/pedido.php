@@ -17,9 +17,9 @@ class Pedido
     public $tiempoEstimado;
     public $numeroMesa;
 
-    public function __construct($nombreCliente, $totalPrecio, $estado, $tiempoEstimado, $numeroMesa) 
+    public function __construct($id, $nombreCliente, $totalPrecio, $estado, $tiempoEstimado, $numeroMesa) 
     {
-        $this->id = self::GenerarId();
+        $this->id = $id;
         $this->nombreCliente = $nombreCliente;
         //$this->idProductoPedido = $idProductoPedido;
         $this->totalPrecio = $totalPrecio;

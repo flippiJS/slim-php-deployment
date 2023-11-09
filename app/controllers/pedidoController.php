@@ -39,6 +39,18 @@ class PedidoController
 
     }
 
+    public function TraerUno($request, $response, $args)
+    {
+        $id = $args['id'];
+        $pedido = PedidoSQL::TraerUno($id);
+        $payload = json_encode($pedido);
+
+        $response->getBody()->write($payload);
+        return $response
+          ->withHeader('Content-Type', 'application/json');
+    }
+    
+
 }
 
 

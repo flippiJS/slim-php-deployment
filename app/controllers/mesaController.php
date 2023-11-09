@@ -39,7 +39,16 @@ class MesaController
 
     }
 
+    public function TraerUno($request, $response, $args)
+    {
+        $id = $args['id'];
+        $mesa = MesaSQL::TraerUno($id);
+        $payload = json_encode($mesa);
 
+        $response->getBody()->write($payload);
+        return $response
+          ->withHeader('Content-Type', 'application/json');
+    }
 
 
 }

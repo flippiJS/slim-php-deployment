@@ -19,6 +19,8 @@ include './controllers/encuestaController.php';
 include './controllers/empleadoController.php';
 include './controllers/mesaController.php';
 include './controllers/ProductoPedidoController.php';
+//include './middlewares/loggerMiddleware.php';
+include './middlewares/authMiddleware.php';
 
 
 // Instantiate App
@@ -36,43 +38,56 @@ $app->addBodyParsingMiddleware();
 $app->group('/productos', function (RouteCollectorProxy $group) 
 {
     $group->get('[/]', \ProductoController::class . ':TraerTodos');
-    //$group->get('/{usuario}', \UsuarioController::class . ':TraerUno');
+    $group->get('/{id}', \ProductoController::class . ':TraerUno');
     $group->post('[/]', \ProductoController::class . ':Insertar');
+    $group->put('/{id}', \ProductoController::class . ':Modificar');
+    $group->delete('/{id}', \ProductoController::class . ':Eliminar');
 });
 
 $app->group('/empleados', function (RouteCollectorProxy $group) 
 {
     $group->get('[/]', \EmpleadoController::class . ':TraerTodos');
-    //$group->get('/{usuario}', \UsuarioController::class . ':TraerUno');
+    $group->get('/{id}', \EmpleadoController::class . ':TraerUno');
     $group->post('[/]', \EmpleadoController::class . ':Insertar');
-});
+    $group->put('/{id}', \EmpleadoController::class . ':Modificar');
+    $group->delete('/{id}', \EmpleadoController::class . ':Eliminar');
+})->add(new AuthMiddleware());
+//->add(new AuthMiddleware());LoggerMiddleware
 
 $app->group('/pedidos', function (RouteCollectorProxy $group) 
 {
     $group->get('[/]', \PedidoController::class . ':TraerTodos');
-    //$group->get('/{usuario}', \UsuarioController::class . ':TraerUno');
+    $group->get('/{id}', \PedidoController::class . ':TraerUno');
     $group->post('[/]', \PedidoController::class . ':Insertar');
+    $group->put('/{id}', \PedidoController::class . ':Modificar');
+    $group->delete('/{id}', \PedidoController::class . ':Eliminar');
 });
 
 $app->group('/mesas', function (RouteCollectorProxy $group) 
 {
     $group->get('[/]', \MesaController::class . ':TraerTodos');
-    //$group->get('/{usuario}', \UsuarioController::class . ':TraerUno');
+    $group->get('/{id}', \MesaController::class . ':TraerUno');
     $group->post('[/]', \MesaController::class . ':Insertar');
+    $group->put('/{id}', \ProductoController::class . ':Modificar');
+    $group->delete('/{id}', \ProductoController::class . ':Eliminar');
 });
 
 $app->group('/encuestas', function (RouteCollectorProxy $group) 
 {
     $group->get('[/]', \EncuestaController::class . ':TraerTodos');
-    //$group->get('/{usuario}', \UsuarioController::class . ':TraerUno');
+    $group->get('/{id}', \EncuestaController::class . ':TraerUno');
     $group->post('[/]', \EncuestaController::class . ':Insertar');
+    $group->put('/{id}', \EncuestaController::class . ':Modificar');
+    $group->delete('/{id}', \EncuestaController::class . ':Eliminar');
 });
 
 $app->group('/productopedido', function (RouteCollectorProxy $group) 
 {
     $group->get('[/]', \ProductoPedidoController::class . ':TraerTodos');
-    //$group->get('/{usuario}', \UsuarioController::class . ':TraerUno');
+    $group->get('/{id}', \ProductoPedidoController::class . ':TraerUno');
     $group->post('[/]', \ProductoPedidoController::class . ':Insertar');
+    $group->put('/{id}', \ProductoPedidoController::class . ':Modificar');
+    $group->delete('/{id}', \ProductoPedidoController::class . ':Eliminar');
 });
 
 $app->run();

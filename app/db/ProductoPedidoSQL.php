@@ -27,5 +27,16 @@ class ProductoPedidoSQL
         return $consulta->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public static function TraerUno($id)
+    {
+        $objAccesoDatos = AccesoDatos::dameUnObjetoAcceso();
+        $consulta = $objAccesoDatos->RetornarConsulta("SELECT * FROM productopedido WHERE id = :id");
+        $consulta->bindValue(':id', $id, PDO::PARAM_INT);
+        $consulta->execute();
+
+        return $consulta->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+
     
 }
