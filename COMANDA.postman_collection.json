@@ -1,0 +1,293 @@
+{
+	"info": {
+		"_postman_id": "21efd481-12fc-457c-99c9-5738bce82fd8",
+		"name": "COMANDA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29666634"
+	},
+	"item": [
+		{
+			"name": "Usuarios Alta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nombre",
+							"value": "Brian",
+							"type": "text"
+						},
+						{
+							"key": "clave",
+							"value": "519bri",
+							"type": "text"
+						},
+						{
+							"key": "perfil",
+							"value": "cocinero",
+							"type": "text"
+						},
+						{
+							"key": "fechaAlta",
+							"value": "2023-03-11",
+							"type": "text"
+						},
+						{
+							"key": "fechaBaja",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/comanda/app/usuarios/alta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"comanda",
+						"app",
+						"usuarios",
+						"alta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Producto Alta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nombre",
+							"value": "tiramisu",
+							"type": "text"
+						},
+						{
+							"key": "precio",
+							"value": "2000",
+							"type": "text"
+						},
+						{
+							"key": "sector",
+							"value": "candy bar",
+							"type": "text"
+						},
+						{
+							"key": "disponible",
+							"value": "true",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/comanda/app/productos/altaProducto",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"comanda",
+						"app",
+						"productos",
+						"altaProducto"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pedido Alta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "fotoMesa",
+							"type": "file",
+							"src": "/C:/Users/USUARIO/Pictures/estufa/IMG_20210428_170546.jpg"
+						},
+						{
+							"key": "idMesa",
+							"value": "A0002",
+							"type": "text"
+						},
+						{
+							"key": "codigoPedido",
+							"value": "P0002",
+							"type": "text"
+						},
+						{
+							"key": "idMozo",
+							"value": "8",
+							"type": "text"
+						},
+						{
+							"key": "nombreCliente",
+							"value": "Mari",
+							"type": "text"
+						},
+						{
+							"key": "productos",
+							"value": "[\n        {\"producto\": \"cerveza rubia\", \"cantidad\": 1},\n        {\"producto\": \"campari\", \"cantidad\": 1}\n    ]",
+							"type": "text"
+						},
+						{
+							"key": "estado",
+							"value": "pendiente",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/comanda/app/pedidos/altaPedido",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"comanda",
+						"app",
+						"pedidos",
+						"altaPedido"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mesa Alta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "codigoMesa",
+							"value": "A0005",
+							"type": "text"
+						},
+						{
+							"key": "estado",
+							"value": "cerrada",
+							"type": "text"
+						},
+						{
+							"key": "disponible",
+							"value": "true",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/comanda/app/mesas/altaMesa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"comanda",
+						"app",
+						"mesas",
+						"altaMesa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuarios Listar Todos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/comanda/app/usuarios/traerUsuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"comanda",
+						"app",
+						"usuarios",
+						"traerUsuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Producto Traer Todos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/comanda/app/productos/traerProductos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"comanda",
+						"app",
+						"productos",
+						"traerProductos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mesa Listar Todas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/comanda/app/mesas/traerMesas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"comanda",
+						"app",
+						"mesas",
+						"traerMesas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pedido Listar Todos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/comanda/app/pedidos/traerPedidos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"comanda",
+						"app",
+						"pedidos",
+						"traerPedidos"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
