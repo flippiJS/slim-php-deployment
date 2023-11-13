@@ -1,33 +1,55 @@
 <?php
 
-enum  Rol: string
-{
-    case Bartender = 'Bartender';
-    case Cervecero = 'Cervecero';
-    case Cocinero = 'Cocinero';
-    case Mozo = 'Mozo';
-}
-
-enum EstadoEmpleado: string
-{
-    case Presente = 'Presente';
-    case Ausente = 'Ausente';
-}
-
 class Empleado
 {
     public $id;
     public $rol;
     public $nombre;
-    public $diponible;
+    public $disponible;
     public $estado;
 
-    public function __construct($rol, $nombre, $disponible, $estado) 
+    public static function InsertarEmpleado($empleado)
     {
-        $this->rol = $rol;
-        $this->nombre = $nombre;
-        $this->disponible = $disponible;
-        $this->estado = $estado;
+        $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
+
+        $consulta = $objetoAccesoDato->RetornarConsulta("INSERT into empleados (rol,nombre,disponible,estado)values(:rol,:nombre,:disponible,:estado)");
+        $consulta->bindValue(':rol', $empleado->rol);
+        $consulta->bindValue(':nombre', $empleado->nombre);
+        $consulta->bindValue(':disponible', $empleado->disponible);
+        $consulta->bindValue(':estado', $empleado->estado);
+        $consulta->execute();
+    }
+
+    public static function TraerTodos()
+    {
+        $objAccesoDatos = AccesoDatos::dameUnObjetoAcceso();
+        $consulta = $objAccesoDatos->RetornarConsulta("SELECT * FROM empleados");
+        $consulta->execute();
+
+        return $consulta->fetchAll(PDO::FETCH_CLASS, 'Empleado');
+    }
+
+    public static function TraerUno($id)
+    {
+        $objAccesoDatos = AccesoDatos::dameUnObjetoAcceso();
+        $consulta = $objAccesoDatos->RetornarConsulta("SELECT * FROM empleados WHERE id = :id");
+        $consulta->bindValue(':id', $id, PDO::PARAM_INT);
+        $consulta->execute();
+
+        return $consulta->fetchObject('Empleado');
+    }
+
+    public static function modificarEmpleado($empleado)
+    {
+        $objAccesoDato = AccesoDatos::dameUnObjetoAcceso();
+        
+        $consulta = $objAccesoDato->RetornarConsulta("UPDATE empleados SET rol = :rol, nombre = :nombre, disponible = :disponible, estado = :estado WHERE id = :id");
+        $consulta->bindValue(':rol', $empleado->rol);
+        $consulta->bindValue(':nombre', $empleado->nombre);
+        $consulta->bindValue(':disponible', $empleado->disponible);
+        $consulta->bindValue(':estado', $empleado->estado);
+        $consulta->bindValue(':id', $empleado->id);
+        $consulta->execute();
     }
 
 }

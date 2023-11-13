@@ -1,12 +1,5 @@
 <?php
 
-enum EstadoPedido: string
-{
-    case Preparacion = 'Preparacion';
-    case Cancelado = 'Cancelado';
-    case Entregado = 'Entregado';
-}
-
 class Pedido
 {
     public $id;
@@ -17,35 +10,54 @@ class Pedido
     public $tiempoEstimado;
     public $numeroMesa;
 
-    public function __construct($id, $nombreCliente, $totalPrecio, $estado, $tiempoEstimado, $numeroMesa) 
+    public static function InsertarPedido($pedido)
     {
-        $this->id = $id;
-        $this->nombreCliente = $nombreCliente;
-        //$this->idProductoPedido = $idProductoPedido;
-        $this->totalPrecio = $totalPrecio;
-        $this->estado = is_string($estado) ? EstadoPedido::from($estado) : $estado;
-        $this->tiempoEstimado = $tiempoEstimado;
-        $this->numeroMesa = $numeroMesa;
+        $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
+
+        $consulta = $objetoAccesoDato->RetornarConsulta("INSERT into pedidos (id,nombreCliente,totalPrecio,estado,tiempoEstimado,numeroMesa)values(:id,:nombreCliente,:totalPrecio,:estado,:tiempoEstimado,:numeroMesa)");
+        $consulta->bindValue(':id', $pedido->id);
+        $consulta->bindValue(':nombreCliente', $pedido->nombreCliente);
+        $consulta->bindValue(':totalPrecio', $pedido->totalPrecio);
+        $consulta->bindValue(':estado', $pedido->estado);
+        $consulta->bindValue(':tiempoEstimado', $pedido->tiempoEstimado);
+        $consulta->bindValue(':numeroMesa', $pedido->numeroMesa);
+        $consulta->execute();
     }
 
-    public static function GenerarId()
+    public static function TraerTodos()
     {
-        $id = "";
-        $caracteres = "0123456789abcdefghijklmnopqrstuvwxyz";
+        $objAccesoDatos = AccesoDatos::dameUnObjetoAcceso();
+        $consulta = $objAccesoDatos->RetornarConsulta("SELECT * FROM pedidos");
+        $consulta->execute();
 
-        for($i = 0; $i < 5; $i++)
-        {
-            $id .= $caracteres[rand(0, strlen($caracteres)-1)];
-        }
+        return $consulta->fetchAll(PDO::FETCH_CLASS, 'Pedido');
+    }
 
-        return $id;
+    public static function TraerUno($id)
+    {
+        $objAccesoDatos = AccesoDatos::dameUnObjetoAcceso();
+        $consulta = $objAccesoDatos->RetornarConsulta("SELECT * FROM pedidos WHERE id = :id");
+        $consulta->bindValue(':id', $id);
+        $consulta->execute();
+
+        return $consulta->fetchObject('Pedido');
+    }
+
+    public static function modificarPedido($pedido)
+    {
+        $objAccesoDato = AccesoDatos::dameUnObjetoAcceso();
+
+        $consulta = $objAccesoDato->RetornarConsulta("UPDATE pedidos SET nombreCliente = :nombreCliente, totalPrecio = :totalPrecio, estado = :estado, tiempoEstimado = :tiempoEstimado, numeroMesa = :numeroMesa WHERE id = :id");
+        $consulta->bindValue(':id', $pedido->id);
+        $consulta->bindValue(':nombreCliente', $pedido->nombreCliente);
+        $consulta->bindValue(':totalPrecio', $pedido->totalPrecio);
+        $consulta->bindValue(':estado', $pedido->estado);
+        $consulta->bindValue(':tiempoEstimado', $pedido->tiempoEstimado);
+        $consulta->bindValue(':numeroMesa', $pedido->numeroMesa);
+        $consulta->execute();
     }
 
     
-
-
-
-
 
 }
 

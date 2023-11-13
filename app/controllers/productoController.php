@@ -1,7 +1,7 @@
 <?php
 
 include './models/producto.php';
-include './db/productoSQL.php';
+
 
 class ProductoController
 {
@@ -10,10 +10,14 @@ class ProductoController
 
         $parametros = $request->getParsedBody();
 
-        if(isset($parametros['nombre']) && isset($parametros['precio']) && isset($parametros['tipo']) && isset($parametros['tiempo']))
+        if(isset($parametros['nombre']) && isset($parametros['precio']) && isset($parametros['tipo']) && isset($parametros['tiempo']) && self::ValidarTipo($parametros['tipo']))
         {
-            $producto = new Producto($parametros['nombre'], $parametros['precio'], tipoProducto::from($parametros['tipo']), $parametros['tiempo']);
-            ProductoSQL::InsertarProducto($producto);
+            $producto = new Producto();
+            $producto->nombre = $parametros['nombre'];
+            $producto->precio = $parametros['precio'];
+            $producto->tipo = $parametros['tipo'];
+            $producto->tiempo = $parametros['tiempo'];
+            Producto::InsertarProducto($producto);
             $payload = json_encode(array("mensaje" => "Producto creado con exito."));
         }
         else
@@ -29,7 +33,7 @@ class ProductoController
 
     public function TraerTodos($request, $response, $args)
     {
-        $lista = ProductoSQL::TraerTodos();
+        $lista = Producto::TraerTodos();
 
         $payload = json_encode($lista);
 
@@ -42,14 +46,53 @@ class ProductoController
     public function TraerUno($request, $response, $args)
     {
         $id = $args['id'];
-        $usuario = ProductoSQL::TraerUno($id);
-        $payload = json_encode($usuario);
+        $producto = Producto::TraerUno($id);
+        $payload = json_encode($producto);
 
         $response->getBody()->write($payload);
         return $response
           ->withHeader('Content-Type', 'application/json');
     }
 
+    public function Modificar($request, $response, $args)
+    {
+        $parametros = $request->getParsedBody();
+        $id = $args['id'];
+        $producto = Producto::TraerUno($id);
+
+        if(isset($parametros['nombre']) && isset($parametros['precio']) && isset($parametros['tipo']) && isset($parametros['tiempo']) && self::ValidarTipo($parametros['tipo']))
+        {
+            $producto->nombre = $parametros['nombre'];
+            $producto->precio = $parametros['precio'];
+            $producto->tipo = $parametros['tipo'];
+            $producto->tiempo = $parametros['tiempo'];
+
+            Producto::ModificarProducto($producto);
+            $payload = json_encode(array("mensaje" => "Producto modificado con exito."));
+        }
+        else
+        {
+            $payload = json_encode(array("error" => "No se pudo modificar el producto."));
+        }
+
+        $response->getBody()->write($payload);
+        return $response
+          ->withHeader('Content-Type', 'application/json');
+    }
+
+
+
+    public function ValidarTipo($tipo)
+    {
+        if($tipo === "Bartender" || $tipo === "Cocinero" || $tipo === "Cervecero")
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 
 }
 

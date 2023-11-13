@@ -68,9 +68,9 @@ $app->group('/mesas', function (RouteCollectorProxy $group)
     $group->get('[/]', \MesaController::class . ':TraerTodos');
     $group->get('/{id}', \MesaController::class . ':TraerUno');
     $group->post('[/]', \MesaController::class . ':Insertar');
-    $group->put('/{id}', \ProductoController::class . ':Modificar');
-    $group->delete('/{id}', \ProductoController::class . ':Eliminar');
-});
+    $group->put('/{id}', \MesaController::class . ':Modificar');
+    $group->delete('/{id}', \MesaController::class . ':Eliminar');
+})->add(new AuthMiddleware("Mozo"));;
 
 $app->group('/encuestas', function (RouteCollectorProxy $group) 
 {
@@ -79,7 +79,7 @@ $app->group('/encuestas', function (RouteCollectorProxy $group)
     $group->post('[/]', \EncuestaController::class . ':Insertar');
     $group->put('/{id}', \EncuestaController::class . ':Modificar');
     $group->delete('/{id}', \EncuestaController::class . ':Eliminar');
-});
+})->add(new AuthMiddleware());
 
 $app->group('/productopedido', function (RouteCollectorProxy $group) 
 {

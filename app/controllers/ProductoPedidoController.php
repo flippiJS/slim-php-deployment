@@ -1,7 +1,7 @@
 <?php
 
 include './models/ProductoPedido.php';
-include './db/ProductoPedidoSQL.php';
+
 
 class ProductoPedidoController
 {
@@ -12,8 +12,11 @@ class ProductoPedidoController
 
         if(isset($parametros['idProducto']) && isset($parametros['idPedido']) && isset($parametros['estado']))
         {
-            $productoPedido = new ProductoPedido($parametros['idProducto'], $parametros['idPedido'], EstadoProducto::from($parametros['estado']));
-            ProductoPedidoSQL::InsertarProductoPedido($productoPedido);
+            $productoPedido = new ProductoPedido();
+            $productoPedido->idProducto = $parametros['idProducto'];
+            $productoPedido->idPedido =  $parametros['idPedido'];
+            $productoPedido->estado = $parametros['estado'];
+            ProductoPedido::InsertarProductoPedido($productoPedido);
             $payload = json_encode(array("mensaje" => "ProductoPedido creado con exito."));
         }
         else
@@ -29,7 +32,7 @@ class ProductoPedidoController
 
     public function TraerTodos($request, $response, $args)
     {
-        $lista = ProductoPedidoSQL::TraerTodos();
+        $lista = ProductoPedido::TraerTodos();
 
         $payload = json_encode($lista);
 
@@ -37,6 +40,17 @@ class ProductoPedidoController
         return $response
           ->withHeader('Content-Type', 'application/json');
 
+    }
+
+    public function TraerUno($request, $response, $args)
+    {
+        $id = $args['id'];
+        $productoPedido = ProductoPedido::TraerUno($id);
+        $payload = json_encode($productoPedido);
+
+        $response->getBody()->write($payload);
+        return $response
+          ->withHeader('Content-Type', 'application/json');
     }
 
 
