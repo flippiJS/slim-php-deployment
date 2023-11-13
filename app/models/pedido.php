@@ -57,7 +57,14 @@ class Pedido
         $consulta->execute();
     }
 
-    
+    public static function BorrarPedido($pedido)
+    {
+        $objAccesoDato = AccesoDatos::dameUnObjetoAcceso();
+        $consulta = $objAccesoDato->RetornarConsulta("UPDATE pedidos SET estado = :estado WHERE id = :id");
+        $consulta->bindValue(':id', $pedido->id);
+        $consulta->bindValue(':estado', "Cancelado");
+        $consulta->execute();
+    }
 
 }
 

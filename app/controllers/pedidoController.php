@@ -10,13 +10,13 @@ class PedidoController
 
         $parametros = $request->getParsedBody();
 
-        if(isset($parametros['nombreCliente']) && isset($parametros['totalPrecio']) && isset($parametros['estado']) && isset($parametros['tiempoEstimado']) && isset($parametros['numeroMesa']) && self::ValidarEstado($parametros['estado']))
+        if(isset($parametros['nombreCliente']) && isset($parametros['totalPrecio']) && isset($parametros['tiempoEstimado']) && isset($parametros['numeroMesa']))
         {
             $pedido = new Pedido();
             $pedido->id = self::GenerarId();
             $pedido->nombreCliente = $parametros['nombreCliente']; // aca esta igual y anda
             $pedido->totalPrecio = $parametros['totalPrecio'];
-            $pedido->estado = $parametros['estado'];
+            $pedido->estado = "Preparacion";
             $pedido->tiempoEstimado = $parametros['tiempoEstimado'];
             $pedido->numeroMesa = $parametros['numeroMesa'];
             Pedido::InsertarPedido($pedido);
@@ -78,6 +78,19 @@ class PedidoController
         {
             $payload = json_encode(array("error" => "No se pudo modificar el producto."));
         }
+
+        $response->getBody()->write($payload);
+        return $response
+          ->withHeader('Content-Type', 'application/json');
+    }
+
+    public function Eliminar($request, $response, $args)
+    {
+        $id = $args['id'];
+        $pedido = Pedido::TraerUno($id);
+
+        Pedido::BorrarPedido($pedido);
+        $payload = json_encode(array("mensaje" => "Usuario borrado con exito"));
 
         $response->getBody()->write($payload);
         return $response
