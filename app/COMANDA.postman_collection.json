@@ -1,0 +1,1423 @@
+{
+	"info": {
+		"_postman_id": "21efd481-12fc-457c-99c9-5738bce82fd8",
+		"name": "COMANDA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29666634"
+	},
+	"item": [
+		{
+			"name": "LOGIN",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nombre",
+							"value": "Daniel",
+							"type": "text"
+						},
+						{
+							"key": "clave",
+							"value": "179dan",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/comanda/app/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"comanda",
+						"app",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuarios Alta",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDA0OTM4MTIsImV4cCI6MTcwMDUyOTgxMiwiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiRGFuaWVsIiwicGVyZmlsIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.zvmHLeYAjMl3LzjwlYgrCvmThIgweawrEe-ji6SxEog",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nombre",
+							"value": "Brian",
+							"type": "text"
+						},
+						{
+							"key": "clave",
+							"value": "519bri",
+							"type": "text"
+						},
+						{
+							"key": "perfil",
+							"value": "cocinero",
+							"type": "text"
+						},
+						{
+							"key": "fechaAlta",
+							"value": "2023-03-11",
+							"type": "text"
+						},
+						{
+							"key": "fechaBaja",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/comanda/app/usuarios/alta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"comanda",
+						"app",
+						"usuarios",
+						"alta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuarios Traer Todos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDA1MDIxOTEsImV4cCI6MTcwMDUzODE5MSwiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiRGFuaWVsIiwicGVyZmlsIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.bHMUiAviNOC1rpmjtO2hk4tuoir4d5kiQnyDIHEVVYk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://localhost/comanda/app/usuarios/traerUsuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"comanda",
+						"app",
+						"usuarios",
+						"traerUsuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuario Traer por Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDA1MDIxOTEsImV4cCI6MTcwMDUzODE5MSwiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiRGFuaWVsIiwicGVyZmlsIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.bHMUiAviNOC1rpmjtO2hk4tuoir4d5kiQnyDIHEVVYk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/comanda/app/usuarios/traerUsuarioPorId/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"comanda",
+						"app",
+						"usuarios",
+						"traerUsuarioPorId",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuario Modificar",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDA1MDIxOTEsImV4cCI6MTcwMDUzODE5MSwiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiRGFuaWVsIiwicGVyZmlsIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.bHMUiAviNOC1rpmjtO2hk4tuoir4d5kiQnyDIHEVVYk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 12,\r\n    \"nombre\": \"Odioso\",\r\n    \"clave\": \"696eli\",\r\n    \"perfil\": \"mozo\",\r\n    \"fechaAlta\": \"2023-05-02 00:00:00\",\r\n    \"fechaBaja\": \"2023-12-12 23:26:14\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/comanda/app/usuarios/modificarUsuario",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"comanda",
+						"app",
+						"usuarios",
+						"modificarUsuario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuario Baja",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDA1MDIxOTEsImV4cCI6MTcwMDUzODE5MSwiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiRGFuaWVsIiwicGVyZmlsIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.bHMUiAviNOC1rpmjtO2hk4tuoir4d5kiQnyDIHEVVYk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 12,\r\n    \"nombre\": \"Odioso\",\r\n    \"clave\": \"696eli\",\r\n    \"perfil\": \"mozo\",\r\n    \"fechaAlta\": \"2023-05-02 00:00:00\",\r\n    \"fechaBaja\": \"2023-12-12 23:26:14\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/comanda/app/usuarios/borrarUsuario/12",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"comanda",
+						"app",
+						"usuarios",
+						"borrarUsuario",
+						"12"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuario Exportar Archivo CSV",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDA1MTI2MzEsImV4cCI6MTcwMDU0ODYzMSwiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiRGFuaWVsIiwicGVyZmlsIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.V9IHCY1-gKx5jlz_YaYj_FvGtbq1IYExIcJ0d4ioy4Y",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost/comanda/app/usuarios/exportarArchivoCSV",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"comanda",
+						"app",
+						"usuarios",
+						"exportarArchivoCSV"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuario Importar Archivo CSV",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDA1MTI2MzEsImV4cCI6MTcwMDU0ODYzMSwiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiRGFuaWVsIiwicGVyZmlsIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.V9IHCY1-gKx5jlz_YaYj_FvGtbq1IYExIcJ0d4ioy4Y",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "archivo",
+							"type": "file",
+							"src": "/C:/xampp/htdocs/comanda/app/nominaUsuarios.csv"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/comanda/app/usuarios/importarArchivoCSV",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"comanda",
+						"app",
+						"usuarios",
+						"importarArchivoCSV"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Producto Alta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nombre",
+							"value": "tiramisu",
+							"type": "text"
+						},
+						{
+							"key": "precio",
+							"value": "2000",
+							"type": "text"
+						},
+						{
+							"key": "sector",
+							"value": "candy bar",
+							"type": "text"
+						},
+						{
+							"key": "disponible",
+							"value": "true",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/comanda/app/productos/altaProducto",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"comanda",
+						"app",
+						"productos",
+						"altaProducto"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Producto Traer Todos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/comanda/app/productos/traerProductos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"comanda",
+						"app",
+						"productos",
+						"traerProductos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Producto Traer por Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDA1MDIxOTEsImV4cCI6MTcwMDUzODE5MSwiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiRGFuaWVsIiwicGVyZmlsIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.bHMUiAviNOC1rpmjtO2hk4tuoir4d5kiQnyDIHEVVYk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/comanda/app/productos/traerProductoPorId/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"comanda",
+						"app",
+						"productos",
+						"traerProductoPorId",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Producto Modificar",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDA1MDIxOTEsImV4cCI6MTcwMDUzODE5MSwiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiRGFuaWVsIiwicGVyZmlsIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.bHMUiAviNOC1rpmjtO2hk4tuoir4d5kiQnyDIHEVVYk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n    \"id\": 2,\r\n    \"nombre\": \"hamburguesa de garbanzo\",\r\n    \"precio\": \"900\",\r\n    \"sector\": \"cocinero\",\r\n    \"disponible\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/comanda/app/productos/modificarProducto",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"comanda",
+						"app",
+						"productos",
+						"modificarProducto"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Producto Baja",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDA1MDIxOTEsImV4cCI6MTcwMDUzODE5MSwiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiRGFuaWVsIiwicGVyZmlsIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.bHMUiAviNOC1rpmjtO2hk4tuoir4d5kiQnyDIHEVVYk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/comanda/app/productos/borrarProducto/16",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"comanda",
+						"app",
+						"productos",
+						"borrarProducto",
+						"16"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mesa Alta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "codigoMesa",
+							"value": "A0005",
+							"type": "text"
+						},
+						{
+							"key": "estado",
+							"value": "cerrada",
+							"type": "text"
+						},
+						{
+							"key": "disponible",
+							"value": "true",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/comanda/app/mesas/altaMesa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"comanda",
+						"app",
+						"mesas",
+						"altaMesa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mesa Traer Todas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/comanda/app/mesas/traerMesas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"comanda",
+						"app",
+						"mesas",
+						"traerMesas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mesa Traer por Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDA1MDIxOTEsImV4cCI6MTcwMDUzODE5MSwiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiRGFuaWVsIiwicGVyZmlsIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.bHMUiAviNOC1rpmjtO2hk4tuoir4d5kiQnyDIHEVVYk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/comanda/app/mesas/traerMesaPorId/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"comanda",
+						"app",
+						"mesas",
+						"traerMesaPorId",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mesa Modificar",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDA1MDIxOTEsImV4cCI6MTcwMDUzODE5MSwiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiRGFuaWVsIiwicGVyZmlsIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.bHMUiAviNOC1rpmjtO2hk4tuoir4d5kiQnyDIHEVVYk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n        \"id\": 5,\r\n        \"codigoMesa\": \"A1005\",\r\n        \"estado\": \"cerrada\",\r\n        \"disponible\": 1\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/comanda/app/mesas/modificarMesa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"comanda",
+						"app",
+						"mesas",
+						"modificarMesa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mesa Baja",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDA1MDIxOTEsImV4cCI6MTcwMDUzODE5MSwiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiRGFuaWVsIiwicGVyZmlsIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.bHMUiAviNOC1rpmjtO2hk4tuoir4d5kiQnyDIHEVVYk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/comanda/app/mesas/borrarMesa/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"comanda",
+						"app",
+						"mesas",
+						"borrarMesa",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pedido Listar Todos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/comanda/app/pedidos/traerPedidos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"comanda",
+						"app",
+						"pedidos",
+						"traerPedidos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pedido Alta",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDA1MDY3MzYsImV4cCI6MTcwMDU0MjczNiwiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiQ3Jpc3RpYW4iLCJwZXJmaWwiOiJtb3pvIn0sImFwcCI6IlRlc3QgSldUIn0.TOwuoQkGSE_qO5-9t7vWMASea824pEeadfsgXE9Wr5g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://localhost/comanda/app/pedidos/altaPedido",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"comanda",
+						"app",
+						"pedidos",
+						"altaPedido"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pedido tomar Foto Posterior",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDA1MDY3MzYsImV4cCI6MTcwMDU0MjczNiwiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiQ3Jpc3RpYW4iLCJwZXJmaWwiOiJtb3pvIn0sImFwcCI6IlRlc3QgSldUIn0.TOwuoQkGSE_qO5-9t7vWMASea824pEeadfsgXE9Wr5g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "fotoMesa",
+							"type": "file",
+							"src": []
+						},
+						{
+							"key": "idPedido",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/comanda/app/pedidos/tomarFotoPosterior",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"comanda",
+						"app",
+						"pedidos",
+						"tomarFotoPosterior"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pedido Modificar",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDA1MDY3MzYsImV4cCI6MTcwMDU0MjczNiwiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiQ3Jpc3RpYW4iLCJwZXJmaWwiOiJtb3pvIn0sImFwcCI6IlRlc3QgSldUIn0.TOwuoQkGSE_qO5-9t7vWMASea824pEeadfsgXE9Wr5g\"",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 17,\r\n  \"idMesa\": 12,\r\n  \"codigoPedido\": \"A1246\",\r\n  \"idMozo\": 10,\r\n  \"nombreCliente\": \"Gregorio\",\r\n  \"fotoMesa\": \"NULL\",\r\n  \"horarioPautado\": \"NULL\",\r\n  \"estado\": \"pendiente\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/comanda/app/pedidos/modificarPedido/{id}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"comanda",
+						"app",
+						"pedidos",
+						"modificarPedido",
+						"{id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pedido Baja",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDA1MDY3MzYsImV4cCI6MTcwMDU0MjczNiwiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiQ3Jpc3RpYW4iLCJwZXJmaWwiOiJtb3pvIn0sImFwcCI6IlRlc3QgSldUIn0.TOwuoQkGSE_qO5-9t7vWMASea824pEeadfsgXE9Wr5g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/comanda/app/pedidos/borrarPedido/17",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"comanda",
+						"app",
+						"pedidos",
+						"borrarPedido",
+						"17"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pedido - Informe De Pedidos Y Demoras",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDA0OTM4MTIsImV4cCI6MTcwMDUyOTgxMiwiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiRGFuaWVsIiwicGVyZmlsIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.zvmHLeYAjMl3LzjwlYgrCvmThIgweawrEe-ji6SxEog",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/comanda/app/pedidos/InformeDePedidosYDemoras",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"comanda",
+						"app",
+						"pedidos",
+						"InformeDePedidosYDemoras"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pedido - Informe Listos Para Servir Todos",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDA1MDY3MzYsImV4cCI6MTcwMDU0MjczNiwiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiQ3Jpc3RpYW4iLCJwZXJmaWwiOiJtb3pvIn0sImFwcCI6IlRlc3QgSldUIn0.TOwuoQkGSE_qO5-9t7vWMASea824pEeadfsgXE9Wr5g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/comanda/app/pedidos/InformeListosParaServirTodos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"comanda",
+						"app",
+						"pedidos",
+						"InformeListosParaServirTodos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pedido - Informe Mejores Comentarios",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDA0OTM4MTIsImV4cCI6MTcwMDUyOTgxMiwiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiRGFuaWVsIiwicGVyZmlsIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.zvmHLeYAjMl3LzjwlYgrCvmThIgweawrEe-ji6SxEog",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/comanda/app/pedidos/InformeMejoresComentarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"comanda",
+						"app",
+						"pedidos",
+						"InformeMejoresComentarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pedido - Informe Mesa Mas Usada",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDA0OTM4MTIsImV4cCI6MTcwMDUyOTgxMiwiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiRGFuaWVsIiwicGVyZmlsIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.zvmHLeYAjMl3LzjwlYgrCvmThIgweawrEe-ji6SxEog",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/comanda/app/pedidos/InformeMesaMasUsada",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"comanda",
+						"app",
+						"pedidos",
+						"InformeMesaMasUsada"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pedido - Informe Pedidos No A Tiempo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDA0OTM4MTIsImV4cCI6MTcwMDUyOTgxMiwiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiRGFuaWVsIiwicGVyZmlsIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.zvmHLeYAjMl3LzjwlYgrCvmThIgweawrEe-ji6SxEog",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/comanda/app/pedidos/InformePedidosNoATiempo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"comanda",
+						"app",
+						"pedidos",
+						"InformePedidosNoATiempo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pedido - Informe Mesas Por Facturacion",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDA0OTM4MTIsImV4cCI6MTcwMDUyOTgxMiwiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiRGFuaWVsIiwicGVyZmlsIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.zvmHLeYAjMl3LzjwlYgrCvmThIgweawrEe-ji6SxEog",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/comanda/app/pedidos/InformeMesasPorFacturacion",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"comanda",
+						"app",
+						"pedidos",
+						"InformeMesasPorFacturacion"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pedido - Informe Facturado Entre Fechas",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDA0OTM4MTIsImV4cCI6MTcwMDUyOTgxMiwiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiRGFuaWVsIiwicGVyZmlsIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.zvmHLeYAjMl3LzjwlYgrCvmThIgweawrEe-ji6SxEog",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/comanda/app/pedidos/InformeFacturadoEntreFechas?idMesa=5&fechaDesde=2023-11-17&fechaHasta=2023-11-21",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"comanda",
+						"app",
+						"pedidos",
+						"InformeFacturadoEntreFechas"
+					],
+					"query": [
+						{
+							"key": "idMesa",
+							"value": "5"
+						},
+						{
+							"key": "fechaDesde",
+							"value": "2023-11-17"
+						},
+						{
+							"key": "fechaHasta",
+							"value": "2023-11-21"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pedido - Informe Pedidos Cancelados",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDA0OTM4MTIsImV4cCI6MTcwMDUyOTgxMiwiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiRGFuaWVsIiwicGVyZmlsIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.zvmHLeYAjMl3LzjwlYgrCvmThIgweawrEe-ji6SxEog",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/comanda/app/pedidos/InformePedidosCancelados",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"comanda",
+						"app",
+						"pedidos",
+						"InformePedidosCancelados"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pedido - Informe Mesa Menos Usada",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDA0OTM4MTIsImV4cCI6MTcwMDUyOTgxMiwiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiRGFuaWVsIiwicGVyZmlsIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.zvmHLeYAjMl3LzjwlYgrCvmThIgweawrEe-ji6SxEog",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/comanda/app/pedidos/InformeMesaMenosUsada",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"comanda",
+						"app",
+						"pedidos",
+						"InformeMesaMenosUsada"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pedido - Informe Mesas Mayor Facturacion",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDA1MTI0MjUsImV4cCI6MTcwMDU0ODQyNSwiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiRGFuaWVsIiwicGVyZmlsIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.g748CFQlBAMw_Zr0pMn8L5Lj5lhQfR5yLrAuLJZpj4U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/comanda/app/pedidos/InformeMesasMayorFacturacion",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"comanda",
+						"app",
+						"pedidos",
+						"InformeMesasMayorFacturacion"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Socio -Informe de Producto ordenado por Cantidad de Ventas",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDA1MDIxOTEsImV4cCI6MTcwMDUzODE5MSwiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiRGFuaWVsIiwicGVyZmlsIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.bHMUiAviNOC1rpmjtO2hk4tuoir4d5kiQnyDIHEVVYk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/comanda/app/ProductoPedido/InformeProdOrdenadoPorCantVenta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"comanda",
+						"app",
+						"ProductoPedido",
+						"InformeProdOrdenadoPorCantVenta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Socio - Informe de Operaciones Por Sector",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDA1MDIxOTEsImV4cCI6MTcwMDUzODE5MSwiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiRGFuaWVsIiwicGVyZmlsIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.bHMUiAviNOC1rpmjtO2hk4tuoir4d5kiQnyDIHEVVYk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/comanda/app/Log/InformeOperacionesPorSector",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"comanda",
+						"app",
+						"Log",
+						"InformeOperacionesPorSector"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Socio - Informe de Operaciones Por Empleado Por Sector",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDA1MDIxOTEsImV4cCI6MTcwMDUzODE5MSwiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiRGFuaWVsIiwicGVyZmlsIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.bHMUiAviNOC1rpmjtO2hk4tuoir4d5kiQnyDIHEVVYk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/comanda/app/Log/InformeOperacionesPorEmpleadoPorSector",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"comanda",
+						"app",
+						"Log",
+						"InformeOperacionesPorEmpleadoPorSector"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Socio - Informe De Login Por Empleado",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDA1MDIxOTEsImV4cCI6MTcwMDUzODE5MSwiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiRGFuaWVsIiwicGVyZmlsIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.bHMUiAviNOC1rpmjtO2hk4tuoir4d5kiQnyDIHEVVYk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/comanda/app/Log/InformeDeLoginPorEmpleado/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"comanda",
+						"app",
+						"Log",
+						"InformeDeLoginPorEmpleado",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Socio - Informe de Operaciones Por Empleado",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDA1MDIxOTEsImV4cCI6MTcwMDUzODE5MSwiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiRGFuaWVsIiwicGVyZmlsIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.bHMUiAviNOC1rpmjtO2hk4tuoir4d5kiQnyDIHEVVYk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/comanda/app/Log/InformeOperacionesPorEmpleado/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"comanda",
+						"app",
+						"Log",
+						"InformeOperacionesPorEmpleado",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cliente - Completar Encuesta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "codigoPedido",
+							"value": "A1244",
+							"type": "text"
+						},
+						{
+							"key": "puntuacionMesa",
+							"value": "6",
+							"type": "text"
+						},
+						{
+							"key": "puntuacionRestaurante",
+							"value": "6",
+							"type": "text"
+						},
+						{
+							"key": "puntuacionMozo",
+							"value": "6",
+							"type": "text"
+						},
+						{
+							"key": "puntuacionCocinero",
+							"value": "6",
+							"type": "text"
+						},
+						{
+							"key": "comentarios",
+							"value": "Todo muy regular, nada se destaca.",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/comanda/app/Cliente/CompletarEncuesta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"comanda",
+						"app",
+						"Cliente",
+						"CompletarEncuesta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pedido - Informe Peores Comentarios",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDA1MTI2MzEsImV4cCI6MTcwMDU0ODYzMSwiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiRGFuaWVsIiwicGVyZmlsIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.V9IHCY1-gKx5jlz_YaYj_FvGtbq1IYExIcJ0d4ioy4Y",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/comanda/app/pedidos/InformePeoresComentarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"comanda",
+						"app",
+						"pedidos",
+						"InformePeoresComentarios"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

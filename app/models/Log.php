@@ -17,7 +17,7 @@ class Log
         date_default_timezone_set("America/Argentina/Buenos_Aires");
         $fecha = date('Y-m-d H:i:s');
         $consulta->bindValue(':fecha', $fecha, PDO::PARAM_STR);
-        $consulta->bindValue(':operacion', (string)$this->operacion, PDO::PARAM_STR);   
+        $consulta->bindValue(':operacion', $this->operacion, PDO::PARAM_STR);   
 
         $consulta->execute();
 
@@ -32,7 +32,7 @@ class Log
         GROUP BY u.perfil");
         $consulta->execute();
         
-        return $consulta->fetchAll(PDO::FETCH_CLASS, 'log');
+        return $consulta->fetchAll(PDO::FETCH_CLASS, 'Log');
     }
 
     public static function InformarOperacionesPorEmpleadoPorSector()
@@ -44,7 +44,7 @@ class Log
         ORDER BY u.perfil");
         $consulta->execute();
         
-        return $consulta->fetchAll(PDO::FETCH_CLASS, 'log');
+        return $consulta->fetchAll(PDO::FETCH_CLASS, 'Log');
     }
 
     public static function InformarLoginsPorEmpleado($idEmpleado)
@@ -56,7 +56,7 @@ class Log
         ORDER BY l.fecha");
         $consulta->execute();
         
-        return $consulta->fetchAll(PDO::FETCH_CLASS, 'log');
+        return $consulta->fetchAll(PDO::FETCH_CLASS, 'Log');
     }
 
     public static function InformarOperacionesPorEmpleado($idEmpleado)
@@ -67,6 +67,8 @@ class Log
         WHERE l.idUsuario=$idEmpleado");
         $consulta->execute();
         
-        return $consulta->fetchAll(PDO::FETCH_CLASS, 'log');
+        return $consulta->fetchAll(PDO::FETCH_CLASS, 'Log');
     }
 }
+
+?>
