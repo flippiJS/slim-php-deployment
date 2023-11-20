@@ -140,3 +140,4 @@ class ProductoPedido
         return $consulta->fetchAll(PDO::FETCH_CLASS, 'ProductoPedido');
     }
 }
+?>

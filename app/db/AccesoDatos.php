@@ -1,4 +1,5 @@
 <?php
+
 class AccesoDatos
 {
     private static $objAccesoDatos;
@@ -38,3 +39,5 @@ class AccesoDatos
         trigger_error('ERROR: La clonación de este objeto no está permitida', E_USER_ERROR);
     }
 }
+
+?>

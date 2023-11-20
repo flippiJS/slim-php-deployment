@@ -32,6 +32,30 @@ class Mesa
         return $consulta->fetchAll(PDO::FETCH_CLASS, 'Mesa');
     }
 
+    public static function modificarMesa($mesa)
+    {
+        $objAccesoDato = AccesoDatos::obtenerInstancia();
+        $consulta = $objAccesoDato->prepararConsulta("UPDATE mesas SET 
+        codigoMesa = :codigoMesa, estado = :estado, disponible = :disponible WHERE id = :id 
+        AND disponible = true");
+        $consulta->bindValue(':id', $mesa->id, PDO::PARAM_INT);
+        $consulta->bindValue(':codigoMesa', $mesa->codigoMesa, PDO::PARAM_STR);
+        $consulta->bindValue(':estado', $mesa->estado, PDO::PARAM_STR);
+        $consulta->bindValue(':disponible', $mesa->disponible, PDO::PARAM_BOOL);
+
+        return $consulta->execute();
+    }
+
+    public static function borrarMesa($id)
+    {
+        $objAccesoDato = AccesoDatos::obtenerInstancia();
+        $consulta = $objAccesoDato->prepararConsulta("UPDATE mesas SET 
+        disponible = false WHERE id = :id AND disponible = true");
+        $consulta->bindValue(':id', $id, PDO::PARAM_INT);
+
+        return $consulta->execute();
+    }
+
     public static function actualizarEstadoMesa($estado, $id)
     {
         $objAccesoDato = AccesoDatos::obtenerInstancia();
@@ -41,6 +65,38 @@ class Mesa
         $consulta->bindValue(':estado', $estado, PDO::PARAM_STR);
 
         $consulta->execute();
+    }
+
+    public static function InformarEstadosDeMesas()
+    {
+        $objAccesoDato = AccesoDatos::obtenerInstancia();
+        $consulta = $objAccesoDato->prepararConsulta("SELECT id, estado FROM mesas 
+        WHERE disponible = true");              
+        $consulta->execute();
+
+        return $consulta->fetchAll(PDO::FETCH_CLASS, 'Mesa');
+    }
+
+    public static function obtenerMesaPorId($id)
+    {
+        $objAccesoDatos = AccesoDatos::obtenerInstancia();
+        $consulta = $objAccesoDatos->prepararConsulta("SELECT * FROM mesas 
+        WHERE id = :id");
+        $consulta->bindValue(':id', $id, PDO::PARAM_INT);
+        $consulta->execute();
+
+        return $consulta->fetchObject('Mesa');
+    }
+
+    public static function obtenerMesaPorCodigo($codigoMesa)
+    {
+        $objAccesoDatos = AccesoDatos::obtenerInstancia();
+        $consulta = $objAccesoDatos->prepararConsulta("SELECT * FROM mesas 
+        WHERE codigoMesa = :codigoMesa");
+        $consulta->bindValue(':codigoMesa', $codigoMesa, PDO::PARAM_STR);
+        $consulta->execute();
+
+        return $consulta->fetchObject('Mesa');
     }
 
     
