@@ -20,40 +20,76 @@ class PedidoController extends Pedido implements IApiUsable
     $nombreCliente = $parametros['nombreCliente'];
     $productos = $parametros['productos'];  
     $estado = $parametros['estado'];     
+
+    $auxMesa = Mesa::obtenerMesaPorId($idMesa);
+    if (!$auxMesa->disponible) 
+    {
+      $payload = json_encode(array("mensaje" => "La mesa no esta disponible. Elija otra porfavor."));
+      $response->getBody()->write($payload);
+      $response = $response->withStatus(400);
+      return $response->withHeader('Content-Type', 'application/json');
+    }
+
+    if ($auxMesa->estado !== "cerrada") 
+    {
+      $payload = json_encode(array("mensaje" => "La mesa esta ocupada. Elija otra porfavor."));
+      $response->getBody()->write($payload);
+      $response = $response->withStatus(400);
+      return $response->withHeader('Content-Type', 'application/json');
+    }
     
     $pedido = new Pedido();   
     $pedido->idMesa = $idMesa; 
     $pedido->codigoPedido = $codigoPedido; 
     $pedido->idMozo = $idMozo; 
     $pedido->nombreCliente = $nombreCliente;   
-    if(file_exists($_FILES["fotoMesa"]["tmp_name"]))
-    {
-      $pedido->fotoMesa = $this->tomarFoto();
-    } 
-    else 
-    {
-      $pedido->fotoMesa = null;
-    }
     $pedido->estado = $estado;  
 
-    $productos = json_decode($productos);
-    foreach($productos as $producto)
+    $auxproductos = json_decode($productos);
+    
+    foreach($auxproductos as $producto)
     {  
-      $productoComprado = Producto::obtenerProductoPorNombre($producto->producto);
+      $productoComprado = Producto::obtenerProductoPorNombre($producto->nombre);
+      
       if($productoComprado)
       {
-        MesaController::actualizarEstadoMesa("con cliente esperando pedido", $idMesa);
-        ProductoPedidoController::CargarUno($codigoPedido,$productoComprado->sector, $productoComprado->id, $producto->cantidad, "Pendiente");
+        Mesa::actualizarEstadoMesa("con cliente esperando pedido", $idMesa);
+        ProductoPedidoController::CargarUno($codigoPedido, $productoComprado->sector, $productoComprado->id, $producto->cantidad, "Pendiente");
       }
     }
     $pedido->crearPedido();
-    LogController::CargarUno($request, "Alta de un pedido");   
 
-    $payload = json_encode(array("mensaje" => "Pedido creado con exito. El código de su pedido es: " 
-    . $pedido->codigoPedido . ". Con él podrá verificar el estado de su pedido"));  
+    $PedidoDb = $this->TraerUltimoPedidoDesdeDB();
+
+    if (isset($_FILES["fotoMesa"]["tmp_name"])) 
+    {
+      $auxFotoPedido = $this->tomarFoto($PedidoDb);
+      Pedido::asignarFotoAPedido($PedidoDb, $auxFotoPedido);
+
+    }
+    LogController::CargarUno($request, "Alta de un pedido");   
+    $payload = json_encode(array("mensaje" => "Pedido creado con exito. El codigo de su pedido es: " 
+    . $pedido->codigoPedido . ". Con el podra verificar el estado de su pedido"));  
     $response->getBody()->write($payload);
     return $response->withHeader('Content-Type', 'application/json');
   }
+
+  public static function TraerUltimoPedidoDesdeDB()
+  {
+    $lista = Pedido::obtenerTodos();
+    $ultimoId = 0;
+    foreach ($lista as $pedido) 
+    {
+      if ($ultimoId < $pedido->id) 
+      {
+        $ultimoId = $pedido->id;
+      }
+    }
+    $auxPedido = Pedido::obtenerPedidoPorId($ultimoId);
+    return $auxPedido;
+  }
+
+
 
   public function TraerUno($request, $response, $args)
   {
@@ -145,18 +181,35 @@ class PedidoController extends Pedido implements IApiUsable
     }
   }
 
-  public static function tomarFoto()
+  public static function tomarFoto($PedidoDb)
   {
     $carpetaFotos = ".".DIRECTORY_SEPARATOR."fotosMesas".DIRECTORY_SEPARATOR;
     if(!file_exists($carpetaFotos))
     {
         mkdir($carpetaFotos, 0777, true);
     }
-    $nuevoNombre = $carpetaFotos.$_FILES["fotoMesa"]["name"];
-    rename($_FILES["fotoMesa"]["tmp_name"], $nuevoNombre);
 
-    return $nuevoNombre;
+    $nuevoNombre = "Mesa".$PedidoDb->idMesa."-Pedido".$PedidoDb->id;
+    $destino = $carpetaFotos . $nuevoNombre . ".jpg";
+    if (isset($_FILES["fotoMesa"]["tmp_name"])) 
+    {
+      $tmpName = $_FILES["fotoMesa"]["tmp_name"];
+      if (move_uploaded_file($tmpName, $destino)) 
+      {
+        return $destino;
+      } 
+      else 
+      {
+        return NULL;
+      }
+    }
+    else 
+    {
+      return NULL;
+    }
+    
   }
+
 
   public static function tomarFotoPosterior($request, $response, $args)
   {
@@ -164,10 +217,19 @@ class PedidoController extends Pedido implements IApiUsable
     
     $idPedido= $parametros["idPedido"];
     $pedidoAModificar=Pedido::obtenerPedidoPorId($idPedido);
+
+    if (!$pedidoAModificar) 
+    {
+      $payload = json_encode(array("mensaje" => "El pedido no existe. Revise los datos ingresados."));  
+      $response = $response->withStatus(400);
+      $response->getBody()->write($payload);
+      return $response->withHeader('Content-Type', 'application/json');
+    }
+
     if($pedidoAModificar->fotoMesa == null)
     {
-      $pedidoAModificar->fotoMesa = PedidoController::tomarFoto();
-      if (Pedido::asignarFotoPosterior($pedidoAModificar)) 
+      $auxFotoPedido = self::tomarFoto($pedidoAModificar);
+      if (Pedido::asignarFotoAPedido($pedidoAModificar, $auxFotoPedido)) 
       {
         $payload = json_encode(array("mensaje" => "Foto asignada al pedido con exito"));
         $response = $response->withStatus(200);
@@ -189,6 +251,7 @@ class PedidoController extends Pedido implements IApiUsable
     return $response->withHeader('Content-Type', 'application/json');
   }
 
+
   public static function calcularTiempoDelPedido()
   {
     $listaDePedidos = Pedido::obtenerTodos();
@@ -196,7 +259,7 @@ class PedidoController extends Pedido implements IApiUsable
     {
       foreach($listaDePedidos as $pedido)
       {
-        $seccionesComanda = ProductoPedidoController::obtenerSeccionPorCodigoPedido($pedido->codigoPedido);
+        $seccionesComanda = ProductoPedido::obtenerSeccionPorCodigoPedido($pedido->codigoPedido);
         $maximoTiempoPedido = 0;
         $todosTiemposDeterminados=true;
         foreach($seccionesComanda as $seccion)
@@ -244,7 +307,7 @@ class PedidoController extends Pedido implements IApiUsable
       {
         if($horarioPedido < $horarioActual)
         {
-          $payload = json_encode(array("mensaje" => "Su pedido ya ha sido terminado. Será servido a la brevedad")); 
+          $payload = json_encode(array("mensaje" => "El pedido ya ha sido terminado. Sera servido a la brevedad")); 
         }
         else
         {
@@ -252,18 +315,18 @@ class PedidoController extends Pedido implements IApiUsable
           $minutosRestantes = $diferenciaEnMinutos->days * 24 * 60;
           $minutosRestantes += $diferenciaEnMinutos->h * 60;
           $minutosRestantes += $diferenciaEnMinutos->i; 
-          $payload = json_encode(array("mensaje" => "Su pedido será servido en: " . $minutosRestantes . " minutos"));
+          $payload = json_encode(array("mensaje" => "El pedido sera servido en: " . $minutosRestantes . " minutos"));
           $response = $response->withStatus(200);             
         }
       } 
       else 
       {
-        $payload = json_encode(array("mensaje" => "Algun producto de su pedido aún no ha comenzado a prepararse.")); 
+        $payload = json_encode(array("mensaje" => "Algun producto del pedido aun no ha comenzado a prepararse.")); 
       }
     }
     else
     {
-      $payload = json_encode(array("mensaje" => "Código de mesa o pedido inválido. Verifique los datos ingresados.")); 
+      $payload = json_encode(array("mensaje" => "Codigo de mesa o pedido invalido. Verifique los datos ingresados.")); 
       $response = $response->withStatus(400); 
     }
 
@@ -385,14 +448,14 @@ class PedidoController extends Pedido implements IApiUsable
     if($pedido)
     { 
       LogController::CargarUno($request, "Informe de lo facturado por mesa entre determinadas fechas");     
-      $mensaje = "Mesa con mayor facturación => Id mesa: " . $pedido->idMesa. " Facturación total desde el " . $fechaDesde . " al " . $fechaHasta . " : $" . $pedido->facturacion_total;
+      $mensaje = "Mesa con mayor facturacion => Id mesa: " . $pedido->idMesa. " Facturacion total desde el " . $fechaDesde . " al " . $fechaHasta . " : $" . $pedido->facturacion_total;
       $payload = json_encode($mensaje);
       $response = $response->withStatus(200);
     }
     else
     {
       $response = $response->withStatus(400);
-      $payload = json_encode(array("Mensaje" => "La mesa no registró facturación en el período consultado."));
+      $payload = json_encode(array("Mensaje" => "La mesa no registro facturacion en el período consultado."));
     }
 
     $response->getBody()->write($payload);

@@ -15,7 +15,7 @@ class CheckBartenderMiddleware{
         $data = AutentificadorJWT::ObtenerData($token);
         if($data->perfil=="bartender")
         {
-          echo "El usuario es bartender";
+          //echo "El usuario es bartender";
           $response= $handler->handle($request);
           $response = $response->withStatus(200);
         }

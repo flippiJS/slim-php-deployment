@@ -1,6 +1,5 @@
 <?php
 require_once './models/Usuario.php';
-require_once './models/GestorCSV.php';
 require_once './models/AutentificadorJWT.php';
 require_once './interfaces/IApiUsable.php';
 
@@ -114,56 +113,6 @@ class UsuarioController extends Usuario implements IApiUsable
     return $response->withHeader('Content-Type', 'application/json');
   }
 
-  public function ImportarUsuariosDesdeCSV($request, $response, $args)
-  {
-    try
-    {
-      $archivo = $request->getUploadedFiles();
-      $file = $archivo['archivo']->getFilePath();
-
-      Usuario::crearUsuarioDesdeCsv($file);
-      $payload = json_encode(array("mensaje" => "Usuarios creados desde CSV con éxito"));
-    }
-    catch(Exception $ex)
-    {
-      $payload = json_encode(array("mensaje" => $ex->getMessage()));
-    }
-    finally
-    {
-      $response->getBody()->write($payload);
-      return $response->withHeader('Content-Type', 'text/csv');
-    }    
-  }
-
-  public function ExportarUsuariosEnCSV($request, $response, $args)
-  {
-    try 
-    {
-      $usuarios = Usuario::obtenerTodos();
-      header('Content-Type: application/csv');
-      header("Content-Disposition: attachment;filename=nominaDescargada.csv");
-
-      $archivo = GestorCSV::EscribirCSV("nominaUsuarios.csv", $usuarios);
-      if(file_exists($archivo)&& filesize($archivo)>0)
-      {
-        $payload = json_encode(array("mensaje" => "Descargue el archivo accediendo a http://localhost:666/".$archivo ));
-      }
-      else
-      {
-        $payload = json_encode(array("mensaje" => "Archivo inválido. verifique el archivo subido."));
-      }
-      
-      $response->getBody()->write($payload);
-      return $response->withHeader('Content-Type', 'application/json');
-    }
-    catch(Exception $ex)
-    {
-      echo "No se pudo procesar el archivo: " . $ex->getMessage();
-    }
-    finally
-    {
-      return $response->withHeader('Content-Type', 'text/csv');
-    } 
-  }
+  
 }
 ?>

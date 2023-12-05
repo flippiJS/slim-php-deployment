@@ -15,7 +15,7 @@ class CheckTokenMiddleware{
       try 
       {
         json_encode(array('datos' => AutentificadorJWT::VerificarToken($token)));
-        echo "Token validado";
+        //echo "Token validado";
         $response= $handler->handle($request);
         $response = $response->withStatus(200);
       } 

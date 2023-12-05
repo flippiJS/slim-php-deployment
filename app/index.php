@@ -59,10 +59,7 @@ $app->group('/usuarios', function (RouteCollectorProxy $group) {
   $group->get('/traerUsuarioPorId/{id}', \UsuarioController::class . ':TraerUno');
   $group->put('/modificarUsuario', \UsuarioController::class . ':ModificarUno')->add(new CheckSocioMiddleware());
   $group->put('/borrarUsuario/{id}', \UsuarioController::class . ':BorrarUno')->add(new CheckSocioMiddleware());
-  $group->post('/exportarArchivoCSV', \UsuarioController::class . ':ExportarUsuariosEnCSV')->add(new CheckSocioMiddleware());
-  $group->post('/importarArchivoCSV', \UsuarioController::class . ':ImportarUsuariosDesdeCSV')->add(new CheckSocioMiddleware());
 })->add(new CheckTokenMiddleware());
-
 
 $app->group('/productos', function (RouteCollectorProxy $group) {
   $group->post('/altaProducto', \ProductoController::class . ':CargarUno')->add(new CheckSocioMiddleware());
@@ -88,7 +85,7 @@ $app->group('/pedidos', function (RouteCollectorProxy $group) {
   $group->post('/altaPedido', \PedidoController::class . ':CargarUno')->add(new CheckMozoMiddleware());
   $group->post('/tomarFotoPosterior', \PedidoController::class . ':tomarFotoPosterior')->add(new CheckMozoMiddleware());
   $group->get('/traerPedidos', \PedidoController::class . ':TraerTodos');
-  $group->get('/InformeDePedidosYDemoras',  \PedidoController::class . ':EmitirInformeDePedidosYDemoras')->add(new CheckSocioMiddleware());
+  $group->get('/InformeDePedidosYDemoras',  \PedidoController::class . ':EmitirInformeTiempoDeDemoraPedido')->add(new CheckSocioMiddleware());
   $group->put('/modificarPedido/{id}', \PedidoController::class . ':ModificarUno');
   $group->delete('/borrarPedido/{id}', \PedidoController::class . ':BorrarUno');
   $group->get('/InformeListosParaServirTodos', \PedidoController::class . ':EmitirInformeListosParaServirTodos')->add(new CheckMozoMiddleware());
@@ -99,8 +96,6 @@ $app->group('/pedidos', function (RouteCollectorProxy $group) {
   $group->get('/InformeFacturadoEntreFechas', \PedidoController::class . ':EmitirInformeFacturadoEntreFechas')->add(new CheckSocioMiddleware());
   $group->get('/InformePedidosCancelados', \PedidoController::class . ':EmitirInformePedidosCancelados')->add(new CheckSocioMiddleware());
   $group->get('/InformeMesaMenosUsada', \PedidoController::class . ':EmitirInformeMesaMenosUsada')->add(new CheckSocioMiddleware());
-  $group->get('/InformeMesasMayorFacturacion', \PedidoController::class . ':EmitirInformeMesasFacturacionAcumulada')->add(new CheckSocioMiddleware());
-  $group->get('/InformeMesasMenorFacturacion', \PedidoController::class . ':EmitirInformeMesasFacturacionAcumulada')->add(new CheckSocioMiddleware());
   $group->get('/InformePeoresComentarios', \EncuestaController::class . ':EmitirInformePeoresComentarios')->add(new CheckSocioMiddleware());
 })->add(new CheckTokenMiddleware());
 
@@ -121,6 +116,7 @@ $app->group('/ProductoPedido', function (RouteCollectorProxy $group) {
 })->add(new CheckTokenMiddleware());
 
 $app->group('/Cliente', function (RouteCollectorProxy $group) {
+  $group->get('/InformeTiempoDeDemoraPedido',  \PedidoController::class . ':EmitirInformeTiempoDeDemoraPedido');  
   $group->post('/CompletarEncuesta',  \EncuestaController::class . ':CargarUno');   
 });
 

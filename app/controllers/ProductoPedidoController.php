@@ -105,22 +105,30 @@ class ProductoPedidoController extends ProductoPedido
 
   public function EmitirInformePendientesPorPerfil($request, $response, $args)
   {
-    $uri=$_SERVER['REQUEST_URI'];
+    $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+
+    $perfil="";
   
     switch($uri)
     {
-      case "/ProductoPedido/InformePendientesBartender":
+      case "/comanda/app/ProductoPedido/InformePendientesBartender":
         $perfil="bartender";
         break;
-      case "/ProductoPedido/InformePendientesCervecero":
+      case "/comanda/app/ProductoPedido/InformePendientesCervecero":
         $perfil="cervecero";
         break;
-      case "/ProductoPedido/InformePendientesCocinero":
+      case "/comanda/app/ProductoPedido/InformePendientesCocinero":
         $perfil="cocinero";
         break;
     }
+
     $pedidosPendientes = ProductoPedido::InformarPendientesPorPerfil($perfil);
-    
+
+    /*
+    echo "<br> PENDIENTES <br>";
+    var_dump($pedidosPendientes);
+    echo "<br>";
+    */
     $cantidadPendientes = count($pedidosPendientes);
     if($cantidadPendientes > 0)
     {         
@@ -145,20 +153,23 @@ class ProductoPedidoController extends ProductoPedido
   
     switch($uri)
     {
-      case "/ProductoPedido/TomaDePedidoBartender":
+      case "/comanda/app/ProductoPedido/TomaDePedidoBartender":
         $perfil="bartender";
         break;
-      case "/ProductoPedido/TomaDePedidoCervecero":
+      case "/comanda/app/ProductoPedido/TomaDePedidoCervecero":
         $perfil="cervecero";
         break;
-      case "/ProductoPedido/TomaDePedidoCocinero":
+      case "/comanda/app/ProductoPedido/TomaDePedidoCocinero":
         $perfil="cocinero";
         break;
     }
 
     $parametros = $request->getParsedBody();
-    $estado = $parametros['estado'];
-    $idEmpleado = $parametros['idEmpleado'];
+    $estado = isset($parametros['estado']) ? $parametros['estado'] : null;
+    $idEmpleado = isset($parametros['idEmpleado']) ? $parametros['idEmpleado'] : null;
+
+    //echo"<br> estado: ".$estado ."<br>";
+    //echo"<br> idEmpleado: ".$idEmpleado ."<br>";
 
     $productoPedidosPendientes = ProductoPedido::InformarPendientesPorPerfil($perfil);
     $cantidadPendientes = count($productoPedidosPendientes);
@@ -197,18 +208,18 @@ class ProductoPedidoController extends ProductoPedido
   
     switch($uri)
     {
-      case "/ProductoPedido/TerminarPedidoBartender":
+      case "/comanda/app/ProductoPedido/TerminarPedidoBartender":
         $perfil="bartender";
         break;
-      case "/ProductoPedido/TerminarPedidoCervecero":
+      case "/comanda/app/ProductoPedido/TerminarPedidoCervecero":
         $perfil="cervecero";
         break;
-      case "/ProductoPedido/TerminarPedidoCocinero":
+      case "/comanda/app/ProductoPedido/TerminarPedidoCocinero":
         $perfil="cocinero";
         break;
     }
     $parametros = $request->getParsedBody();
-    $estado = $parametros['estado'];
+    $estado = isset($parametros['estado']) ? $parametros['estado'] : null;
 
     $productosPedidosEnPreparacion = ProductoPedido::InformarEnPreparacionPorPerfil($perfil);
     $cantidadPendientes = count($productosPedidosEnPreparacion);
@@ -219,7 +230,7 @@ class ProductoPedidoController extends ProductoPedido
       $seccionesPedidos = ProductoPedido::obtenerSeccionPorCodigoPedido($productoPedidoATerminar->codigoPedido);
       foreach($seccionesPedidos as $seccion)
       {
-        if(strcmp($seccion->estado, "en preparacion") == 0 && strcmp($seccion->perfil, $perfil) == 0)
+        if(strcmp($seccion->estado, "en preparacion") == 0 && strcmp($seccion->perfil, $perfil) == 0)////
         {
           $seccion->estado= $estado;
           ProductoPedido::modificarProductoPedido($seccion);
@@ -258,7 +269,7 @@ class ProductoPedidoController extends ProductoPedido
     foreach($seccionesPedidos as $productoPedido)
     {
       $pedidoListoParaServir = true;
-      if(strcmp($productoPedido->estado, "listo para servir")!=0)
+      if(strcmp($productoPedido->estado, "listo para servir")!=0)//////
       {
         $pedidoListoParaServir = false;
         break;
@@ -274,13 +285,13 @@ class ProductoPedidoController extends ProductoPedido
   
     switch($uri)
     {
-      case "/ProductoPedido/InformeListosParaServirBartender":
+      case "/comanda/app/ProductoPedido/InformeListosParaServirBartender":
         $perfil="bartender";
         break;
-      case "/ProductoPedido/InformeListosParaServirCervecero":
+      case "/comanda/app/ProductoPedido/InformeListosParaServirCervecero":
         $perfil="cervecero";
         break;
-      case "/ProductoPedido/InformeListosParaServirCocinero":
+      case "/comanda/app/ProductoPedido/InformeListosParaServirCocinero":
         $perfil="cocinero";
         break;
     }

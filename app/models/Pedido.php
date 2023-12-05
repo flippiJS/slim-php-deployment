@@ -14,6 +14,8 @@ class Pedido
     public $horarioEntregado;
     public $totalFacturado;
     public $estado;
+    public $codigoMesa;
+    public $facturacion_total;
 
     public function crearPedido()
     {
@@ -76,16 +78,17 @@ class Pedido
         return $consulta->execute(); 
     }
 
-    public static function asignarFotoPosterior($pedido)
+    public static function asignarFotoAPedido($pedido, $fotoMesa)
     {
         $objAccesoDato = AccesoDatos::obtenerInstancia();
         $consulta = $objAccesoDato->prepararConsulta("UPDATE pedidos SET 
         fotoMesa = :fotoMesa WHERE id = :id");
         $consulta->bindValue(':id', $pedido->id, PDO::PARAM_INT);
-        $consulta->bindValue(':fotoMesa', $pedido->fotoMesa, PDO::PARAM_STR);
+        $consulta->bindValue(':fotoMesa', $fotoMesa, PDO::PARAM_STR);
 
         return $consulta->execute();
     }
+
 
     public static function obtenerPedidoPorId($id)
     {

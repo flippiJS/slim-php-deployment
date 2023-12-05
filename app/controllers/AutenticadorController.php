@@ -8,10 +8,9 @@ class AutenticadorController extends AutentificadorJWT
     {
         $parametros = $request->getParsedBody();
         $usuarioBaseDeDatos=Usuario::obtenerUsuario($parametros["nombre"]);
-        echo $usuarioBaseDeDatos->nombre. "<br>";
-        echo $usuarioBaseDeDatos->clave. "<br>";
-
-        echo "clave parametros: ".$parametros["clave"]. "<br>";
+        //echo $usuarioBaseDeDatos->nombre. "<br>";
+        //echo $usuarioBaseDeDatos->clave. "<br>";
+        //echo "clave parametros: ".$parametros["clave"]. "<br>";
 
         if($usuarioBaseDeDatos != null)
         {       

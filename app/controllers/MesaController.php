@@ -139,10 +139,10 @@ class MesaController extends Mesa implements IApiUsable
     $estado=$datos["estado"];
 
     $pedido = Pedido::obtenerPedidoPorIdMesaYEstado($idMesa);
-    echo $pedido."<br>";
+    //echo $pedido."<br>";
 
     $seccionPedido = ProductoPedido::obtenerSeccionPorCodigoPedido($pedido->codigoPedido);
-    echo $seccionPedido."<br>";
+    ////echo $seccionPedido."<br>";
 
     if($pedido && $seccionPedido)
     {
@@ -159,14 +159,14 @@ class MesaController extends Mesa implements IApiUsable
       Pedido::modificarPedido($pedido);
       LogController::CargarUno($request, "Servir la mesa");
 
-      $payload = json_encode(array("mensaje" => "Mesa modificada con exito"));
+      $payload = json_encode(array("mensaje" => "Mesa servida con exito"));
       $response->getBody()->write($payload);
       $response = $response->withStatus(200);
       return $response->withHeader('Content-Type', 'application/json');
     } 
     else 
     {
-      $payload = json_encode(array("mensaje" => "No se pudo modificar la mesa. Intente nuevamente"));
+      $payload = json_encode(array("mensaje" => "No se pudo servir la mesa. Intente nuevamente"));
       $response->getBody()->write($payload);
       $response = $response->withStatus(400);
       return $response->withHeader('Content-Type', 'application/json');
@@ -187,7 +187,7 @@ class MesaController extends Mesa implements IApiUsable
         Mesa::modificarMesa($mesa);
         $totalCobrado = 0;
         $productoPedido = ProductoPedido::obtenerSeccionPorCodigoPedido($pedido->codigoPedido);
-        
+
         if($productoPedido)
         {
           foreach ($productoPedido as $seccionPedido) {
@@ -222,6 +222,9 @@ class MesaController extends Mesa implements IApiUsable
   
   public function CerrarMesa($request, $response, $args)
   {
+    //$datos = $request->getParsedBody();
+
+    //$id = $datos["idMesa"]; 
     $id = $args["id"];
     $mesa = Mesa::obtenerMesaPorId($id);
   
@@ -244,7 +247,7 @@ class MesaController extends Mesa implements IApiUsable
       } 
       else 
       {
-        $payload = json_encode(array("mensaje" => "La mesa no está con cliente pagando. Intente nuevamente."));
+        $payload = json_encode(array("mensaje" => "La mesa no esta con cliente pagando. Intente nuevamente."));
         $response = $response->withStatus(400);
       }
     } 

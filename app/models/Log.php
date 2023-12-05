@@ -32,7 +32,8 @@ class Log
         GROUP BY u.perfil");
         $consulta->execute();
         
-        return $consulta->fetchAll(PDO::FETCH_CLASS, 'Log');
+        $resultados = $consulta->fetchAll(PDO::FETCH_OBJ);
+        return $resultados;
     }
 
     public static function InformarOperacionesPorEmpleadoPorSector()
@@ -44,7 +45,7 @@ class Log
         ORDER BY u.perfil");
         $consulta->execute();
         
-        return $consulta->fetchAll(PDO::FETCH_CLASS, 'Log');
+        return $consulta->fetchAll(PDO::FETCH_OBJ);
     }
 
     public static function InformarLoginsPorEmpleado($idEmpleado)
@@ -56,7 +57,7 @@ class Log
         ORDER BY l.fecha");
         $consulta->execute();
         
-        return $consulta->fetchAll(PDO::FETCH_CLASS, 'Log');
+        return $consulta->fetchAll(PDO::FETCH_OBJ);
     }
 
     public static function InformarOperacionesPorEmpleado($idEmpleado)

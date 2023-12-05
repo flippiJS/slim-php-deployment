@@ -15,7 +15,7 @@ class CheckSocioMiddleware{
         $data = AutentificadorJWT::ObtenerData($token);
         if($data->perfil=="socio")
         {
-          echo "El usuario es socio";
+          //echo "El usuario es socio";
           $response= $handler->handle($request);
           $response = $response->withStatus(200);
         }

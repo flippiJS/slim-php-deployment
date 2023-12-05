@@ -73,7 +73,7 @@ class ProductoPedido
     {
         $objAccesoDato = AccesoDatos::obtenerInstancia();
         $consulta = $objAccesoDato->prepararConsulta("SELECT * FROM productospedidos 
-        WHERE perfil = :perfil AND estado = 'pendiente' AND idEmpleado is null");              
+        WHERE perfil = :perfil AND estado = 'pendiente' AND idEmpleado is NULL");              
         $consulta->bindValue(':perfil', $perfil, PDO::PARAM_STR);
         $consulta->execute();
 
@@ -95,7 +95,7 @@ class ProductoPedido
     {
         $objAccesoDato = AccesoDatos::obtenerInstancia();
         $consulta = $objAccesoDato->prepararConsulta("UPDATE productospedidos SET idEmpleado = :idEmpleado, 
-        horarioPautado= :horarioPautado,estado = :estado WHERE codigoPedido = :codigoPedido AND perfil = :perfil AND estado = 'pendiente'");
+        horarioPautado= :horarioPautado, estado = :estado WHERE codigoPedido = :codigoPedido AND perfil = :perfil AND estado = 'pendiente'");
         $consulta->bindValue(':codigoPedido', $productoPedido->codigoPedido, PDO::PARAM_STR);
         $consulta->bindValue(':idEmpleado', $productoPedido->idEmpleado, PDO::PARAM_INT);
         $consulta->bindValue(':perfil', $productoPedido->perfil, PDO::PARAM_STR);
@@ -137,7 +137,7 @@ class ProductoPedido
         ORDER BY cantidad_vendida DESC");
         $consulta->execute();
         
-        return $consulta->fetchAll(PDO::FETCH_CLASS, 'ProductoPedido');
+        return $consulta->fetchAll(PDO::FETCH_OBJ);
     }
 }
 ?>

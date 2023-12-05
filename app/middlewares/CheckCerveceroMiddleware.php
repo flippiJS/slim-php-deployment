@@ -15,7 +15,7 @@ class CheckCerveceroMiddleware{
         $data = AutentificadorJWT::ObtenerData($token);
         if($data->perfil=="cervecero")
         {
-          echo "El usuario es cervecero";
+          //echo "El usuario es cervecero";
           $response= $handler->handle($request);
           $response = $response->withStatus(200);
         }
