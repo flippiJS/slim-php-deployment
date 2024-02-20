@@ -70,11 +70,19 @@ class Mesa
     public static function InformarEstadosDeMesas()
     {
         $objAccesoDato = AccesoDatos::obtenerInstancia();
-        $consulta = $objAccesoDato->prepararConsulta("SELECT id, estado FROM mesas 
-        WHERE disponible = true");              
+        $consulta = $objAccesoDato->prepararConsulta("SELECT id, codigoMesa, estado, disponible FROM mesas");              
         $consulta->execute();
 
-        return $consulta->fetchAll(PDO::FETCH_CLASS, 'Mesa');
+        $mesas = $consulta->fetchAll(PDO::FETCH_CLASS, 'Mesa');
+        
+        foreach ($mesas as $mesa) 
+        {
+            $mesa->disponible = ($mesa->disponible == true) ? "SI" : "NO";
+        }
+
+        return $mesas;
+
+        //return $consulta->fetchAll(PDO::FETCH_CLASS, 'Mesa');
     }
 
     public static function obtenerMesaPorId($id)

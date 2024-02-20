@@ -10,6 +10,17 @@ class CheckTokenMiddleware{
     public function __invoke(Request $request,RequestHandler $handler) : Response
     {
       $header = $request->getHeaderLine(("Authorization"));
+
+      $response= new Response();
+
+      $tokenArray = explode("Bearer", $header);
+      if (count($tokenArray) < 2) 
+      {
+          // El encabezado Authorization no contiene un token válido
+          $response->getBody()->write(json_encode(array('error - Token invalido' => 'El encabezado Authorization esta vacio.')));
+          return $response->withStatus(401)->withHeader('Content-Type', 'application/json');
+      }
+
       $token = trim(explode("Bearer",$header)[1]);
       $response= new Response();
       try 

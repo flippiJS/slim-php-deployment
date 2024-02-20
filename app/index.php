@@ -25,6 +25,7 @@ require_once './db/AccesoDatos.php';
 require_once './controllers/AutenticadorController.php';
 require_once './controllers/EncuestaController.php';
 require_once './controllers/LogController.php';
+require_once './controllers/GestorPDFController.php';
 require_once './controllers/MesaController.php';
 require_once './controllers/PedidoController.php';
 require_once './controllers/ProductoController.php';
@@ -60,6 +61,8 @@ $app->group('/usuarios', function (RouteCollectorProxy $group) {
   $group->put('/modificarUsuario', \UsuarioController::class . ':ModificarUno')->add(new CheckSocioMiddleware());
   $group->put('/borrarUsuario/{id}', \UsuarioController::class . ':BorrarUno')->add(new CheckSocioMiddleware());
 })->add(new CheckTokenMiddleware());
+
+$app->get('/descargarLogo', \GestorPDFController::class . ':DescargarLogoComanda')->add(new CheckSocioMiddleware());
 
 $app->group('/productos', function (RouteCollectorProxy $group) {
   $group->post('/altaProducto', \ProductoController::class . ':CargarUno')->add(new CheckSocioMiddleware());

@@ -325,7 +325,7 @@ class ProductoPedidoController extends ProductoPedido
     {    
       foreach($pedidosConProductos as $pedidoConProd)
       { 
-        $mensaje = "Id del producto: " . $pedidoConProd->idProducto. " Nombre del producto: " . $pedidoConProd->nombre. " Cantidad vendida: " . $pedidoConProd->cantidad_vendida;
+        $mensaje = "Id del producto: " . $pedidoConProd->idProducto. " - Nombre del producto: " . $pedidoConProd->nombre. " - Cantidad vendida: " . $pedidoConProd->cantidad_vendida;
         array_push($listaProdVendidos, $mensaje);
       }
 

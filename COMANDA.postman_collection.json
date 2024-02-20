@@ -26,7 +26,7 @@
 					"urlencoded": [
 						{
 							"key": "nombre",
-							"value": "Daniel ",
+							"value": "Daniel",
 							"type": "text"
 						},
 						{
@@ -628,7 +628,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDE3OTc1OTYsImV4cCI6MTcwMTgzMzU5NiwiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiTWFyY2VsYSIsInBlcmZpbCI6Im1vem8ifSwiYXBwIjoiVGVzdCBKV1QifQ.60eIequAciW5RrQ9udOjiRrvznw6n5FBqVsq2-P99lc",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDg0NTQ1ODEsImV4cCI6MTcwODQ5MDU4MSwiYXVkIjoiYTcyNzZiNDUwYTE2MDAzN2UyMjg4YmZhNDc3YmM4NzVkZjcxODU0ZSIsImRhdGEiOnsibm9tYnJlIjoiQ3Jpc3RpYW4iLCJwZXJmaWwiOiJtb3pvIn0sImFwcCI6IlRlc3QgSldUIn0.zNsA1AYAZXVv15ePwzUxQiZcjzCfRTHbXLAPU2nozrc",
 							"type": "string"
 						}
 					]
@@ -674,7 +674,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDE3OTc1OTYsImV4cCI6MTcwMTgzMzU5NiwiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiTWFyY2VsYSIsInBlcmZpbCI6Im1vem8ifSwiYXBwIjoiVGVzdCBKV1QifQ.60eIequAciW5RrQ9udOjiRrvznw6n5FBqVsq2-P99lc",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDg0NTQ1ODEsImV4cCI6MTcwODQ5MDU4MSwiYXVkIjoiYTcyNzZiNDUwYTE2MDAzN2UyMjg4YmZhNDc3YmM4NzVkZjcxODU0ZSIsImRhdGEiOnsibm9tYnJlIjoiQ3Jpc3RpYW4iLCJwZXJmaWwiOiJtb3pvIn0sImFwcCI6IlRlc3QgSldUIn0.zNsA1AYAZXVv15ePwzUxQiZcjzCfRTHbXLAPU2nozrc",
 							"type": "string"
 						}
 					]
@@ -706,7 +706,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDE3OTgxNzIsImV4cCI6MTcwMTgzNDE3MiwiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiRGFuaWVsIiwicGVyZmlsIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.D5rkPMN-K5h0qGQkfJYZA8TFp1uvflwJ_po7C_gA8-8",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDg0NTQ0MDUsImV4cCI6MTcwODQ5MDQwNSwiYXVkIjoiYTcyNzZiNDUwYTE2MDAzN2UyMjg4YmZhNDc3YmM4NzVkZjcxODU0ZSIsImRhdGEiOnsibm9tYnJlIjoiRGFuaWVsIiwicGVyZmlsIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.x5r6486cPzHgKc3vqS7eEROARjCcFC1exBctl37XjLI",
 							"type": "string"
 						}
 					]
@@ -742,7 +742,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDE3OTgxNzIsImV4cCI6MTcwMTgzNDE3MiwiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiRGFuaWVsIiwicGVyZmlsIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.D5rkPMN-K5h0qGQkfJYZA8TFp1uvflwJ_po7C_gA8-8",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDg0NTQ0MDUsImV4cCI6MTcwODQ5MDQwNSwiYXVkIjoiYTcyNzZiNDUwYTE2MDAzN2UyMjg4YmZhNDc3YmM4NzVkZjcxODU0ZSIsImRhdGEiOnsibm9tYnJlIjoiRGFuaWVsIiwicGVyZmlsIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.x5r6486cPzHgKc3vqS7eEROARjCcFC1exBctl37XjLI",
 							"type": "string"
 						}
 					]
@@ -767,35 +767,14 @@
 			"response": []
 		},
 		{
-			"name": "Pedido Listar Todos",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost/comanda/app/pedidos/traerPedidos",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"path": [
-						"comanda",
-						"app",
-						"pedidos",
-						"traerPedidos"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Pedido Alta",
+			"name": "Moza - Pedido Alta",
 			"request": {
 				"auth": {
 					"type": "bearer",
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDE2OTg5ODksImV4cCI6MTcwMTczNDk4OSwiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiQ3Jpc3RpYW4iLCJwZXJmaWwiOiJtb3pvIn0sImFwcCI6IlRlc3QgSldUIn0.bSyyb2gZogwdsq_LQ5aEkx2LFe45T-I1hrp98gMGBg0",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDgxMTc3MjgsImV4cCI6MTcwODE1MzcyOCwiYXVkIjoiYTcyNzZiNDUwYTE2MDAzN2UyMjg4YmZhNDc3YmM4NzVkZjcxODU0ZSIsImRhdGEiOnsibm9tYnJlIjoiQ3Jpc3RpYW4iLCJwZXJmaWwiOiJtb3pvIn0sImFwcCI6IlRlc3QgSldUIn0.XfmFy6wsO1VJZAbMbfdluaDz8eZvUmrHWG6hr0auQe0",
 							"type": "string"
 						}
 					]
@@ -838,7 +817,7 @@
 						{
 							"key": "fotoMesa",
 							"type": "file",
-							"src": "/C:/Users/USUARIO/Pictures/Mesas/foto4.jpg"
+							"src": []
 						}
 					]
 				},
@@ -859,7 +838,7 @@
 			"response": []
 		},
 		{
-			"name": "Pedido tomar Foto Posterior",
+			"name": "Moza -  Tomar Foto Posterior",
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -899,6 +878,27 @@
 						"app",
 						"pedidos",
 						"tomarFotoPosterior"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pedido Listar Todos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/comanda/app/pedidos/traerPedidos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"comanda",
+						"app",
+						"pedidos",
+						"traerPedidos"
 					]
 				}
 			},
@@ -1026,7 +1026,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDE3OTc1OTYsImV4cCI6MTcwMTgzMzU5NiwiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiTWFyY2VsYSIsInBlcmZpbCI6Im1vem8ifSwiYXBwIjoiVGVzdCBKV1QifQ.60eIequAciW5RrQ9udOjiRrvznw6n5FBqVsq2-P99lc",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDg0NTQ1ODEsImV4cCI6MTcwODQ5MDU4MSwiYXVkIjoiYTcyNzZiNDUwYTE2MDAzN2UyMjg4YmZhNDc3YmM4NzVkZjcxODU0ZSIsImRhdGEiOnsibm9tYnJlIjoiQ3Jpc3RpYW4iLCJwZXJmaWwiOiJtb3pvIn0sImFwcCI6IlRlc3QgSldUIn0.zNsA1AYAZXVv15ePwzUxQiZcjzCfRTHbXLAPU2nozrc",
 							"type": "string"
 						}
 					]
@@ -1057,7 +1057,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDE3MDI1OTIsImV4cCI6MTcwMTczODU5MiwiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiUGFibG8iLCJwZXJmaWwiOiJzb2NpbyJ9LCJhcHAiOiJUZXN0IEpXVCJ9.rN6xOF_Kr1jr2EXlxdoh8B8bdXOiH56Rv-JZNhpwBmQ",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDg0NTQ0MDUsImV4cCI6MTcwODQ5MDQwNSwiYXVkIjoiYTcyNzZiNDUwYTE2MDAzN2UyMjg4YmZhNDc3YmM4NzVkZjcxODU0ZSIsImRhdGEiOnsibm9tYnJlIjoiRGFuaWVsIiwicGVyZmlsIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.x5r6486cPzHgKc3vqS7eEROARjCcFC1exBctl37XjLI",
 							"type": "string"
 						}
 					]
@@ -1088,7 +1088,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDE3OTgxNzIsImV4cCI6MTcwMTgzNDE3MiwiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiRGFuaWVsIiwicGVyZmlsIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.D5rkPMN-K5h0qGQkfJYZA8TFp1uvflwJ_po7C_gA8-8",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDg0NTQ0MDUsImV4cCI6MTcwODQ5MDQwNSwiYXVkIjoiYTcyNzZiNDUwYTE2MDAzN2UyMjg4YmZhNDc3YmM4NzVkZjcxODU0ZSIsImRhdGEiOnsibm9tYnJlIjoiRGFuaWVsIiwicGVyZmlsIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.x5r6486cPzHgKc3vqS7eEROARjCcFC1exBctl37XjLI",
 							"type": "string"
 						}
 					]
@@ -1119,7 +1119,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDE3MDI1OTIsImV4cCI6MTcwMTczODU5MiwiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiUGFibG8iLCJwZXJmaWwiOiJzb2NpbyJ9LCJhcHAiOiJUZXN0IEpXVCJ9.rN6xOF_Kr1jr2EXlxdoh8B8bdXOiH56Rv-JZNhpwBmQ",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDg0NTQ0MDUsImV4cCI6MTcwODQ5MDQwNSwiYXVkIjoiYTcyNzZiNDUwYTE2MDAzN2UyMjg4YmZhNDc3YmM4NzVkZjcxODU0ZSIsImRhdGEiOnsibm9tYnJlIjoiRGFuaWVsIiwicGVyZmlsIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.x5r6486cPzHgKc3vqS7eEROARjCcFC1exBctl37XjLI",
 							"type": "string"
 						}
 					]
@@ -1137,82 +1137,6 @@
 						"app",
 						"pedidos",
 						"InformePedidosNoATiempo"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Pedido - Informe Mesas Ordenadas Por Facturacion",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDE2NjcxMjgsImV4cCI6MTcwMTcwMzEyOCwiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiRGFuaWVsIiwicGVyZmlsIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.luegyIW_bPh4vn9coOF03GLt0XCYOwX31qlJuhCQgww",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost/comanda/app/pedidos/InformeMesasPorFacturacion",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"path": [
-						"comanda",
-						"app",
-						"pedidos",
-						"InformeMesasPorFacturacion"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Pedido - Informe Facturado Entre Fechas",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDE2NjcxMjgsImV4cCI6MTcwMTcwMzEyOCwiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiRGFuaWVsIiwicGVyZmlsIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.luegyIW_bPh4vn9coOF03GLt0XCYOwX31qlJuhCQgww",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost/comanda/app/pedidos/InformeFacturadoEntreFechas?idMesa=5&fechaDesde=2023-11-17&fechaHasta=2023-11-21",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"path": [
-						"comanda",
-						"app",
-						"pedidos",
-						"InformeFacturadoEntreFechas"
-					],
-					"query": [
-						{
-							"key": "idMesa",
-							"value": "5"
-						},
-						{
-							"key": "fechaDesde",
-							"value": "2023-11-17"
-						},
-						{
-							"key": "fechaHasta",
-							"value": "2023-11-21"
-						}
 					]
 				}
 			},
@@ -1343,14 +1267,14 @@
 			"response": []
 		},
 		{
-			"name": "ProductoPedido - Informe Pendientes Bartender",
+			"name": "Bartender - Informe Pedidos Pendientes",
 			"request": {
 				"auth": {
 					"type": "bearer",
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDE3OTc4NzQsImV4cCI6MTcwMTgzMzg3NCwiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiQ2Fyb2xpbmEiLCJwZXJmaWwiOiJiYXJ0ZW5kZXIifSwiYXBwIjoiVGVzdCBKV1QifQ.zf3yL1OlbHhqvL9nGR72l1zQc0DqflQ6lh7d2VNKhU8",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDg0NTQ2MzYsImV4cCI6MTcwODQ5MDYzNiwiYXVkIjoiYTcyNzZiNDUwYTE2MDAzN2UyMjg4YmZhNDc3YmM4NzVkZjcxODU0ZSIsImRhdGEiOnsibm9tYnJlIjoiTHVjYXMiLCJwZXJmaWwiOiJiYXJ0ZW5kZXIifSwiYXBwIjoiVGVzdCBKV1QifQ.bQZZ9ayA2F5iPO3XWz0m364Y-zzM41PakmFCWdfc8Pc",
 							"type": "string"
 						}
 					]
@@ -1374,14 +1298,14 @@
 			"response": []
 		},
 		{
-			"name": "ProductoPedido - Toma De Pedido Bartender",
+			"name": "Bartender - Toma De Pedido",
 			"request": {
 				"auth": {
 					"type": "bearer",
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDE3OTc4NzQsImV4cCI6MTcwMTgzMzg3NCwiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiQ2Fyb2xpbmEiLCJwZXJmaWwiOiJiYXJ0ZW5kZXIifSwiYXBwIjoiVGVzdCBKV1QifQ.zf3yL1OlbHhqvL9nGR72l1zQc0DqflQ6lh7d2VNKhU8",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDE4MjM2MzcsImV4cCI6MTcwMTg1OTYzNywiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiTHVjYXMiLCJwZXJmaWwiOiJiYXJ0ZW5kZXIifSwiYXBwIjoiVGVzdCBKV1QifQ.TIrJcfXyyoeuzKQlUkjo4uol0S7TrWWUZl2CQZxJ8Gs",
 							"type": "string"
 						}
 					]
@@ -1420,14 +1344,14 @@
 			"response": []
 		},
 		{
-			"name": "ProductoPedido -Terminar Pedido Bartender",
+			"name": "Bartender -Terminar Pedido",
 			"request": {
 				"auth": {
 					"type": "bearer",
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDE3OTc4NzQsImV4cCI6MTcwMTgzMzg3NCwiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiQ2Fyb2xpbmEiLCJwZXJmaWwiOiJiYXJ0ZW5kZXIifSwiYXBwIjoiVGVzdCBKV1QifQ.zf3yL1OlbHhqvL9nGR72l1zQc0DqflQ6lh7d2VNKhU8",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDg0NTQ2MzYsImV4cCI6MTcwODQ5MDYzNiwiYXVkIjoiYTcyNzZiNDUwYTE2MDAzN2UyMjg4YmZhNDc3YmM4NzVkZjcxODU0ZSIsImRhdGEiOnsibm9tYnJlIjoiTHVjYXMiLCJwZXJmaWwiOiJiYXJ0ZW5kZXIifSwiYXBwIjoiVGVzdCBKV1QifQ.bQZZ9ayA2F5iPO3XWz0m364Y-zzM41PakmFCWdfc8Pc",
 							"type": "string"
 						}
 					]
@@ -1461,7 +1385,7 @@
 			"response": []
 		},
 		{
-			"name": "ProductoPedido - Informe Listos Para Servir Bartender",
+			"name": "Bartender - Informe Pedidos Listos Para Servir",
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -1492,14 +1416,14 @@
 			"response": []
 		},
 		{
-			"name": "ProductoPedido - Informe Pendientes Cervecero",
+			"name": "Cervecero - Informe Pedidos Pendientes",
 			"request": {
 				"auth": {
 					"type": "bearer",
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDE3OTgwMjIsImV4cCI6MTcwMTgzNDAyMiwiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiSnVsaWFuIiwicGVyZmlsIjoiY2VydmVjZXJvIn0sImFwcCI6IlRlc3QgSldUIn0.IHOTWKOhOE-Z7JAa4GOWdTie_TyVzmq9kzRS1u-yZ74",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDg0NTQ0ODcsImV4cCI6MTcwODQ5MDQ4NywiYXVkIjoiYTcyNzZiNDUwYTE2MDAzN2UyMjg4YmZhNDc3YmM4NzVkZjcxODU0ZSIsImRhdGEiOnsibm9tYnJlIjoiTGVhbmRybyIsInBlcmZpbCI6ImNlcnZlY2VybyJ9LCJhcHAiOiJUZXN0IEpXVCJ9.3QmJy_1nuq401MveGHInbRAmrmLOKY-AOGKcSlTl2Iw",
 							"type": "string"
 						}
 					]
@@ -1523,7 +1447,7 @@
 			"response": []
 		},
 		{
-			"name": "ProductoPedido -Toma De Pedido Cervecero",
+			"name": "Cervecero -Toma De Pedido",
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -1569,14 +1493,14 @@
 			"response": []
 		},
 		{
-			"name": "ProductoPedido - Terminar Pedido Cervecero",
+			"name": "Cervecero - Terminar Pedido",
 			"request": {
 				"auth": {
 					"type": "bearer",
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDE3OTgwMjIsImV4cCI6MTcwMTgzNDAyMiwiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiSnVsaWFuIiwicGVyZmlsIjoiY2VydmVjZXJvIn0sImFwcCI6IlRlc3QgSldUIn0.IHOTWKOhOE-Z7JAa4GOWdTie_TyVzmq9kzRS1u-yZ74",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDg0NTQ0ODcsImV4cCI6MTcwODQ5MDQ4NywiYXVkIjoiYTcyNzZiNDUwYTE2MDAzN2UyMjg4YmZhNDc3YmM4NzVkZjcxODU0ZSIsImRhdGEiOnsibm9tYnJlIjoiTGVhbmRybyIsInBlcmZpbCI6ImNlcnZlY2VybyJ9LCJhcHAiOiJUZXN0IEpXVCJ9.3QmJy_1nuq401MveGHInbRAmrmLOKY-AOGKcSlTl2Iw",
 							"type": "string"
 						}
 					]
@@ -1610,7 +1534,7 @@
 			"response": []
 		},
 		{
-			"name": "ProductoPedido - Informe Listos Para Servir Cervecero",
+			"name": "Cervecero - Informe Productos Listos Para Servir",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -1631,14 +1555,14 @@
 			"response": []
 		},
 		{
-			"name": "ProductoPedido - Informe Pendientes Cocinero",
+			"name": "Cocinero - Informe Pedidos Pendientes",
 			"request": {
 				"auth": {
 					"type": "bearer",
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDE3OTgwODMsImV4cCI6MTcwMTgzNDA4MywiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiTHVjaWEiLCJwZXJmaWwiOiJjb2NpbmVybyJ9LCJhcHAiOiJUZXN0IEpXVCJ9.5kN7xQe4Yl_04-XUsG0vcJPPW7gIBcghWJLWG-zKTLs",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDg0NTQ1MjIsImV4cCI6MTcwODQ5MDUyMiwiYXVkIjoiYTcyNzZiNDUwYTE2MDAzN2UyMjg4YmZhNDc3YmM4NzVkZjcxODU0ZSIsImRhdGEiOnsibm9tYnJlIjoiTHVjaWEiLCJwZXJmaWwiOiJjb2NpbmVybyJ9LCJhcHAiOiJUZXN0IEpXVCJ9.sHv1KIA8yWUHcKtO87KyM24ZBfOeppF8XsW71KQDBSE",
 							"type": "string"
 						}
 					]
@@ -1662,7 +1586,7 @@
 			"response": []
 		},
 		{
-			"name": "ProductoPedido - Toma De Pedido Cocinero",
+			"name": "Cocinero - Toma De Pedido",
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -1708,14 +1632,14 @@
 			"response": []
 		},
 		{
-			"name": "ProductoPedido - Terminar Pedido Cocinero",
+			"name": "Cocinero - Terminar Pedido",
 			"request": {
 				"auth": {
 					"type": "bearer",
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDE3OTgwODMsImV4cCI6MTcwMTgzNDA4MywiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiTHVjaWEiLCJwZXJmaWwiOiJjb2NpbmVybyJ9LCJhcHAiOiJUZXN0IEpXVCJ9.5kN7xQe4Yl_04-XUsG0vcJPPW7gIBcghWJLWG-zKTLs",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDg0NTQ1MjIsImV4cCI6MTcwODQ5MDUyMiwiYXVkIjoiYTcyNzZiNDUwYTE2MDAzN2UyMjg4YmZhNDc3YmM4NzVkZjcxODU0ZSIsImRhdGEiOnsibm9tYnJlIjoiTHVjaWEiLCJwZXJmaWwiOiJjb2NpbmVybyJ9LCJhcHAiOiJUZXN0IEpXVCJ9.sHv1KIA8yWUHcKtO87KyM24ZBfOeppF8XsW71KQDBSE",
 							"type": "string"
 						}
 					]
@@ -1749,7 +1673,7 @@
 			"response": []
 		},
 		{
-			"name": "ProductoPedido - Informe Listos Para Servir Cocinero",
+			"name": "Cocinero - Informe Productos Listos Para Servir",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -1777,7 +1701,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDE2NjcxMjgsImV4cCI6MTcwMTcwMzEyOCwiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiRGFuaWVsIiwicGVyZmlsIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.luegyIW_bPh4vn9coOF03GLt0XCYOwX31qlJuhCQgww",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDg0NTQ0MDUsImV4cCI6MTcwODQ5MDQwNSwiYXVkIjoiYTcyNzZiNDUwYTE2MDAzN2UyMjg4YmZhNDc3YmM4NzVkZjcxODU0ZSIsImRhdGEiOnsibm9tYnJlIjoiRGFuaWVsIiwicGVyZmlsIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.x5r6486cPzHgKc3vqS7eEROARjCcFC1exBctl37XjLI",
 							"type": "string"
 						}
 					]
@@ -1808,7 +1732,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDE2NjI3MDgsImV4cCI6MTcwMTY5ODcwOCwiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiRGFuaWVsIiwicGVyZmlsIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.mEM3gGExn6wcwfFcCP8BdNLv421wVudjb4r8BRVQFoI",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDg0NTQ0MDUsImV4cCI6MTcwODQ5MDQwNSwiYXVkIjoiYTcyNzZiNDUwYTE2MDAzN2UyMjg4YmZhNDc3YmM4NzVkZjcxODU0ZSIsImRhdGEiOnsibm9tYnJlIjoiRGFuaWVsIiwicGVyZmlsIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.x5r6486cPzHgKc3vqS7eEROARjCcFC1exBctl37XjLI",
 							"type": "string"
 						}
 					]
@@ -1839,7 +1763,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDE2NjcxMjgsImV4cCI6MTcwMTcwMzEyOCwiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiRGFuaWVsIiwicGVyZmlsIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.luegyIW_bPh4vn9coOF03GLt0XCYOwX31qlJuhCQgww",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDg0NTQ0MDUsImV4cCI6MTcwODQ5MDQwNSwiYXVkIjoiYTcyNzZiNDUwYTE2MDAzN2UyMjg4YmZhNDc3YmM4NzVkZjcxODU0ZSIsImRhdGEiOnsibm9tYnJlIjoiRGFuaWVsIiwicGVyZmlsIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.x5r6486cPzHgKc3vqS7eEROARjCcFC1exBctl37XjLI",
 							"type": "string"
 						}
 					]
@@ -1870,7 +1794,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDE2NjcxMjgsImV4cCI6MTcwMTcwMzEyOCwiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiRGFuaWVsIiwicGVyZmlsIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.luegyIW_bPh4vn9coOF03GLt0XCYOwX31qlJuhCQgww",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDg0NTQ0MDUsImV4cCI6MTcwODQ5MDQwNSwiYXVkIjoiYTcyNzZiNDUwYTE2MDAzN2UyMjg4YmZhNDc3YmM4NzVkZjcxODU0ZSIsImRhdGEiOnsibm9tYnJlIjoiRGFuaWVsIiwicGVyZmlsIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.x5r6486cPzHgKc3vqS7eEROARjCcFC1exBctl37XjLI",
 							"type": "string"
 						}
 					]
@@ -1878,7 +1802,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost/comanda/app/Log/InformeDeLoginPorEmpleado/7",
+					"raw": "http://localhost/comanda/app/Log/InformeDeLoginPorEmpleado/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -1888,7 +1812,7 @@
 						"app",
 						"Log",
 						"InformeDeLoginPorEmpleado",
-						"7"
+						"1"
 					]
 				}
 			},
@@ -1927,6 +1851,82 @@
 			"response": []
 		},
 		{
+			"name": "Socio - Informe Mesas Ordenadas Por Facturacion",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDg0NTQ0MDUsImV4cCI6MTcwODQ5MDQwNSwiYXVkIjoiYTcyNzZiNDUwYTE2MDAzN2UyMjg4YmZhNDc3YmM4NzVkZjcxODU0ZSIsImRhdGEiOnsibm9tYnJlIjoiRGFuaWVsIiwicGVyZmlsIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.x5r6486cPzHgKc3vqS7eEROARjCcFC1exBctl37XjLI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/comanda/app/pedidos/InformeMesasPorFacturacion",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"comanda",
+						"app",
+						"pedidos",
+						"InformeMesasPorFacturacion"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Socio - Informe Facturacion de Mesas Entre Fechas",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDE2NjcxMjgsImV4cCI6MTcwMTcwMzEyOCwiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiRGFuaWVsIiwicGVyZmlsIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.luegyIW_bPh4vn9coOF03GLt0XCYOwX31qlJuhCQgww",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/comanda/app/pedidos/InformeFacturadoEntreFechas?idMesa=5&fechaDesde=2023-11-17&fechaHasta=2023-11-21",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"comanda",
+						"app",
+						"pedidos",
+						"InformeFacturadoEntreFechas"
+					],
+					"query": [
+						{
+							"key": "idMesa",
+							"value": "5"
+						},
+						{
+							"key": "fechaDesde",
+							"value": "2023-11-17"
+						},
+						{
+							"key": "fechaHasta",
+							"value": "2023-11-21"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Socio - Descargar Logo",
 			"request": {
 				"auth": {
@@ -1934,7 +1934,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDE3MDI1OTIsImV4cCI6MTcwMTczODU5MiwiYXVkIjoiY2UwMmE4MTk5ZTE4OWY4ZjI0YmFhN2ExNjllMWE3ZDYyNWNiMjJjMSIsImRhdGEiOnsibm9tYnJlIjoiUGFibG8iLCJwZXJmaWwiOiJzb2NpbyJ9LCJhcHAiOiJUZXN0IEpXVCJ9.rN6xOF_Kr1jr2EXlxdoh8B8bdXOiH56Rv-JZNhpwBmQ",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDg0NTQ0MDUsImV4cCI6MTcwODQ5MDQwNSwiYXVkIjoiYTcyNzZiNDUwYTE2MDAzN2UyMjg4YmZhNDc3YmM4NzVkZjcxODU0ZSIsImRhdGEiOnsibm9tYnJlIjoiRGFuaWVsIiwicGVyZmlsIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.x5r6486cPzHgKc3vqS7eEROARjCcFC1exBctl37XjLI",
 							"type": "string"
 						}
 					]
@@ -2002,27 +2002,27 @@
 						},
 						{
 							"key": "puntuacionMesa",
-							"value": "4",
+							"value": "6",
 							"type": "text"
 						},
 						{
 							"key": "puntuacionRestaurante",
-							"value": "4",
+							"value": "6",
 							"type": "text"
 						},
 						{
 							"key": "puntuacionMozo",
-							"value": "4",
+							"value": "8",
 							"type": "text"
 						},
 						{
 							"key": "puntuacionCocinero",
-							"value": "4",
+							"value": "8",
 							"type": "text"
 						},
 						{
 							"key": "comentarios",
-							"value": "Muy flojo todo.",
+							"value": "Buen comida. Un poco chico el plato.",
 							"type": "text"
 						}
 					]

@@ -4,6 +4,7 @@ class Log
 {
     public $id;
     public $idUsuario;
+    public $nombre;
     public $fecha;
     public $operacion;
 
